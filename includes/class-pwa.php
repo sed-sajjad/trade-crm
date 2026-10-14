@@ -19,6 +19,10 @@ final class PWA {
 		self::add_rewrite_rules();
 	}
 
+	public static function icon_url( string $filename ): string {
+		return add_query_arg( 'v', TRADE_CRM_VERSION, TRADE_CRM_URL . 'assets/icons/' . $filename );
+	}
+
 	public function serve_manifest(): void {
 		$settings = wp_parse_args( (array) get_option( 'trade_crm_settings', array() ), Tables::default_settings() );
 		$manifest = array(
@@ -34,9 +38,9 @@ final class PWA {
 			'theme_color' => $settings['theme_color'],
 			'background_color' => $settings['background_color'],
 			'icons' => array(
-				array( 'src' => TRADE_CRM_URL . 'assets/icons/icon-192.png', 'sizes' => '192x192', 'type' => 'image/png', 'purpose' => 'any' ),
-				array( 'src' => TRADE_CRM_URL . 'assets/icons/icon-512.png', 'sizes' => '512x512', 'type' => 'image/png', 'purpose' => 'any' ),
-				array( 'src' => TRADE_CRM_URL . 'assets/icons/icon-maskable-512.png', 'sizes' => '512x512', 'type' => 'image/png', 'purpose' => 'maskable' ),
+				array( 'src' => self::icon_url( 'icon-192.png' ), 'sizes' => '192x192', 'type' => 'image/png', 'purpose' => 'any' ),
+				array( 'src' => self::icon_url( 'icon-512.png' ), 'sizes' => '512x512', 'type' => 'image/png', 'purpose' => 'any' ),
+				array( 'src' => self::icon_url( 'icon-maskable-512.png' ), 'sizes' => '512x512', 'type' => 'image/png', 'purpose' => 'maskable' ),
 			),
 		);
 		$this->public_headers( 'application/manifest+json; charset=utf-8' );
@@ -49,11 +53,11 @@ final class PWA {
 		$manifest = is_readable( $manifest_path ) ? json_decode( (string) file_get_contents( $manifest_path ), true ) : array();
 		$assets = array(
 			TRADE_CRM_URL . 'assets/offline.html',
-			TRADE_CRM_URL . 'assets/icons/icon.svg',
-			TRADE_CRM_URL . 'assets/icons/icon-192.png',
-			TRADE_CRM_URL . 'assets/icons/icon-512.png',
-			TRADE_CRM_URL . 'assets/icons/icon-maskable-512.png',
-			TRADE_CRM_URL . 'assets/icons/apple-touch-icon.png',
+			self::icon_url( 'icon.svg' ),
+			self::icon_url( 'icon-192.png' ),
+			self::icon_url( 'icon-512.png' ),
+			self::icon_url( 'icon-maskable-512.png' ),
+			self::icon_url( 'apple-touch-icon.png' ),
 		);
 		foreach ( is_array( $manifest ) ? $manifest : array() as $item ) {
 			if ( ! empty( $item['file'] ) ) {

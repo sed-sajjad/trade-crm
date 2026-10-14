@@ -52,8 +52,17 @@ try {
       assert(before.status < 500 && after.status < 500, 'HTTP server error on ' + mount + path);
       if (['/', '/wp-login.php'].includes(path)) assert.equal(before.status, 200, 'Baseline is not a working page: ' + path);
       assert(!/Fatal error:|Parse error:/.test(before.body + after.body), 'PHP error in public response');
-      assert.deepEqual(publicSignature(after), publicSignature(before), 'Public response changed: ' + mount + path);
-      check(!after.body.includes('trade-crm-root') && !after.body.includes('trade-crm-login-css'), `unchanged public status, SEO, assets: ${mount + path}`);
+      if (path.startsWith('/wp-login.php')) {
+        const signature = publicSignature(after);
+        signature.tags = signature.tags.filter(tag => !tag.includes('trade-crm-login-css'));
+        assert.deepEqual(signature, publicSignature(before), 'Login headers or core assets changed: ' + mount + path);
+        check(after.body.includes('trade-crm-login-css') && after.body.includes('trade-crm-login-intro') && !after.body.includes('id="language-switcher"'), `minimal login presentation: ${mount + path}`);
+        const formTag = body => body.match(/<form\b[^>]*id=["'](?:loginform|lostpasswordform)["'][^>]*>/i)?.[0];
+        check(Boolean(formTag(after.body)) && formTag(after.body) === formTag(before.body), `WordPress login form action and method preserved: ${mount + path}`);
+      } else {
+        assert.deepEqual(publicSignature(after), publicSignature(before), 'Public response changed: ' + mount + path);
+        check(!after.body.includes('trade-crm-root') && !after.body.includes('trade-crm-login-css'), `unchanged public status, SEO, assets: ${mount + path}`);
+      }
     }
     const home = await get(mount + '/');
     for (const flag of ['trade_crm_app', 'trade_crm_manifest', 'trade_crm_sw']) {

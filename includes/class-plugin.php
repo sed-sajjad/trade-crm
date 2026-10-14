@@ -10,6 +10,7 @@ final class Plugin {
 		add_action( 'init', array( App::instance(), 'register_rewrite_rules' ) );
 		add_action( 'init', array( PWA::instance(), 'register_rewrite_rules' ) );
 		add_action( 'template_redirect', array( $this, 'route_requests' ), 0 );
+		add_action( 'login_init', array( new Login(), 'boot' ) );
 		add_action( 'wp_login', array( $this, 'refresh_issued_nonce_state' ), 10, 2 );
 		add_action( 'admin_notices', array( $this, 'dependency_notice' ) );
 		add_action( 'rest_api_init', array( Rest::instance(), 'register_routes' ) );

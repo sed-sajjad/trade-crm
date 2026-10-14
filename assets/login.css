@@ -1,1 +1,274 @@
-body.login{background:#f4f8f7;font-family:Tahoma,Arial,sans-serif}body.login #login h1 a{width:auto;height:auto;margin-bottom:18px;background:none;text-indent:0;font-size:22px;line-height:1.5;font-weight:700;color:#0f766e;text-decoration:none}body.login #loginform,body.login #lostpasswordform{border:1px solid #e1eae8;border-radius:12px;box-shadow:0 12px 40px #18443d0d}body.login label{font-size:12px}body.login input[type=text],body.login input[type=password],body.login input[type=email]{border-color:#dce6e4;border-radius:7px}body.login .button-primary{border-color:#0f766e;background:#0f766e;box-shadow:none;text-shadow:none;border-radius:7px}body.login .button-primary:hover{background:#0b605a}body.login #nav a,body.login #backtoblog a{color:#0f766e}body.login #login_error,body.login .message{border-radius:7px;border-right-color:#0f766e}
+@font-face {
+	font-family: 'Trade CRM Login';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('fonts/vazirmatn-latin-400-normal.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Trade CRM Login';
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src: url('fonts/vazirmatn-latin-600-normal.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Trade CRM Login';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('fonts/vazirmatn-arabic-400-normal.woff2') format('woff2');
+	unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+200C-200E, U+FB50-FDFF, U+FE70-FEFC;
+}
+
+@font-face {
+	font-family: 'Trade CRM Login';
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src: url('fonts/vazirmatn-arabic-600-normal.woff2') format('woff2');
+	unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+200C-200E, U+FB50-FDFF, U+FE70-FEFC;
+}
+
+body.login {
+	--login-accent: #0f766e;
+	--login-accent-dark: #0b605a;
+	--login-ink: #213b3a;
+	--login-muted: #697c79;
+	--wp-admin-theme-color: var(--login-accent);
+	--wp-admin-theme-color-darker-10: var(--login-accent-dark);
+	--wp-admin-theme-color-darker-20: var(--login-accent-dark);
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	height: auto;
+	min-height: 100vh;
+	min-height: 100svh;
+	padding: 32px 20px;
+	background: #f3f7f6;
+	color: var(--login-ink);
+	font-family: 'Trade CRM Login', Tahoma, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.7;
+}
+
+body.login #login {
+	box-sizing: border-box;
+	width: 420px;
+	max-width: 100%;
+	margin: auto;
+	padding: 36px;
+	border: 1px solid #e5ece9;
+	border-radius: 20px;
+	background: #fff;
+	box-shadow: 0 16px 56px rgba(26, 62, 54, .06);
+}
+
+body.login .wp-login-logo { display: none; }
+
+.trade-crm-login-intro {
+	margin-bottom: 28px;
+	text-align: center;
+}
+
+.trade-crm-login-mark {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 48px;
+	height: 48px;
+	margin-bottom: 12px;
+	border-radius: 14px;
+	background: #eaf5f1;
+	color: var(--login-accent);
+}
+
+.trade-crm-login-mark svg { width: 24px; height: 24px; }
+
+body.login .trade-crm-login-site {
+	margin-bottom: 16px;
+	color: var(--login-accent);
+	font-size: 13px;
+	font-weight: 600;
+	overflow-wrap: anywhere;
+}
+
+body.login .trade-crm-login-intro h2 {
+	margin-bottom: 8px;
+	color: var(--login-ink);
+	font-family: inherit;
+	font-size: 23px;
+	font-weight: 600;
+	line-height: 1.6;
+}
+
+body.login .trade-crm-login-description {
+	color: var(--login-muted);
+	font-size: 13px;
+	line-height: 1.9;
+}
+
+body.login #login form {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	box-shadow: none;
+	overflow: visible;
+}
+
+body.login label { margin-bottom: 8px; font-size: 13px; font-weight: 400; }
+body.login input, body.login button, body.login .button { font-family: inherit; }
+
+body.login form .input,
+body.login input[type='text'],
+body.login input[type='password'],
+body.login input[type='email'] {
+	box-sizing: border-box;
+	width: 100%;
+	min-height: 48px;
+	margin: 0 0 20px;
+	padding: 10px 13px;
+	border: 1px solid #dbe5e1;
+	border-radius: 10px;
+	background: #f9fbfa;
+	color: var(--login-ink);
+	font-size: 16px;
+	line-height: 1.5;
+	box-shadow: none;
+	transition: border-color .15s, box-shadow .15s;
+}
+
+body.login form .input:focus {
+	border-color: var(--login-accent);
+	background: #fff;
+	box-shadow: 0 0 0 3px rgba(15, 118, 110, .1);
+	outline: 2px solid transparent;
+}
+
+body.login #user_login, body.login .password-input { direction: ltr; text-align: left; }
+
+body.login .button.wp-hide-pw {
+	width: 48px;
+	height: 48px;
+	padding: 12px;
+	border-radius: 10px;
+	color: var(--login-muted);
+}
+
+body.login .button.wp-hide-pw:hover { color: var(--login-accent); }
+
+body.login #login form .forgetmenot {
+	float: none;
+	min-height: 24px;
+	margin-bottom: 16px;
+	gap: 8px;
+}
+
+body.login .forgetmenot label { margin: 0; color: var(--login-muted); font-size: 12px; }
+
+body.login input[type='checkbox'] {
+	width: 16px;
+	height: 16px;
+	min-width: 16px;
+	margin: 0;
+	border-color: #bfcec8;
+	border-radius: 4px;
+}
+
+body.login input[type='checkbox']:checked::before { color: var(--login-accent); }
+
+body.login .button-primary {
+	float: none;
+	width: 100%;
+	min-height: 48px;
+	padding: 10px 16px;
+	border: 1px solid var(--login-accent);
+	border-radius: 10px;
+	background: var(--login-accent);
+	color: #fff;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 1.8;
+	box-shadow: none;
+	text-shadow: none;
+	transition: background .15s, border-color .15s;
+}
+
+body.login .button-primary:hover, body.login .button-primary:active {
+	border-color: var(--login-accent-dark);
+	background: var(--login-accent-dark);
+}
+
+body.login .button-primary:focus { box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--login-accent); }
+
+body.login #nav {
+	margin: 22px 0 0;
+	padding: 0;
+	text-align: center;
+	font-size: 12px;
+}
+
+body.login #backtoblog {
+	margin: 24px 0 0;
+	padding: 20px 0 0;
+	border-top: 1px solid #edf1ef;
+	text-align: center;
+	font-size: 12px;
+}
+
+body.login #nav a, body.login #backtoblog a {
+	display: inline-block;
+	padding: 3px 2px;
+	color: var(--login-muted);
+	text-decoration: none;
+}
+
+body.login #nav a:hover, body.login #backtoblog a:hover {
+	color: var(--login-accent);
+	text-decoration: underline;
+}
+
+body.login .message, body.login .notice, body.login .success {
+	margin-bottom: 22px;
+	padding: 10px 14px;
+	border-radius: 8px;
+	background: #f0f8f5;
+	border-inline-start-color: var(--login-accent);
+	font-size: 13px;
+	box-shadow: none;
+}
+
+body.login .notice-error {
+	border-inline-start-color: #bf4141;
+	background: #fff3f2;
+	color: #9a3333;
+}
+
+body.login .success { border-inline-start-color: #278353; background: #f0f8f1; }
+
+body.login #pass-strength-result {
+	box-sizing: border-box;
+	width: 100%;
+	margin: 8px 0 16px;
+	border-radius: 6px;
+}
+
+body.login .reset-pass-submit .button:not(.button-primary) { margin-bottom: 12px; }
+body.login .privacy-policy-page-link { margin: 20px 0 0; font-size: 12px; }
+body.login.interim-login { min-height: 0; padding: 16px; }
+body.login.interim-login #login { margin: 0 auto; padding: 24px; }
+body.login.interim-login .trade-crm-login-mark,
+body.login.interim-login .trade-crm-login-site { display: none; }
+
+@media (max-width: 480px) {
+	body.login { padding: 24px 16px; }
+	body.login #login { padding: 28px 24px; border-radius: 16px; }
+	body.login .trade-crm-login-intro h2 { font-size: 21px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	body.login .input, body.login .button-primary { transition: none; }
+}

@@ -71,8 +71,8 @@ final class App {
 	<meta name="apple-mobile-web-app-status-bar-style" content="default">
 	<meta name="apple-mobile-web-app-title" content="<?php echo esc_attr( $settings['app_short_name'] ); ?>">
 	<link rel="manifest" href="<?php echo esc_url( home_url( '/trade-crm-manifest.webmanifest' ) ); ?>">
-	<link rel="apple-touch-icon" href="<?php echo esc_url( TRADE_CRM_URL . 'assets/icons/apple-touch-icon.png' ); ?>">
-	<link rel="icon" href="<?php echo esc_url( TRADE_CRM_URL . 'assets/icons/icon.svg' ); ?>" type="image/svg+xml">
+	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo esc_url( PWA::icon_url( 'apple-touch-icon.png' ) ); ?>">
+	<link rel="icon" href="<?php echo esc_url( PWA::icon_url( 'icon.svg' ) ); ?>" type="image/svg+xml">
 	<title><?php echo esc_html( $settings['app_name'] ); ?></title>
 	<?php foreach ( (array) ( $entry['css'] ?? array() ) as $css ) : ?>
 	<link rel="stylesheet" href="<?php echo esc_url( $asset_url . $css ); ?>">
