@@ -1,0 +1,9 @@
+/vendor/
+/assets/build/
+/node_modules/
+/coverage/
+/playwright-report/
+/test-results/
+/.phpunit.cache/
+/tsconfig.tsbuildinfo
+.DS_Store

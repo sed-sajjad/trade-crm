@@ -1,0 +1,33 @@
+{
+  "name": "trade-crm/wordpress-plugin",
+  "description": "A WordPress CRM plugin for Persian-speaking trading teams.",
+  "type": "wordpress-plugin",
+  "license": "proprietary",
+  "require": {
+    "php": ">=8.1",
+    "giggsey/libphonenumber-for-php-lite": "^9.0"
+  },
+  "scripts": {
+    "test": "@php tests/run.php"
+  },
+  "repositories": {
+    "packagist.org": false,
+    "giggsey-libphonenumber": {
+      "type": "vcs",
+      "url": "https://github.com/giggsey/libphonenumber-for-php-lite.git",
+      "no-api": true
+    },
+    "symfony-polyfill-mbstring": {
+      "type": "vcs",
+      "url": "https://github.com/symfony/polyfill-mbstring.git",
+      "no-api": true
+    }
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  },
+  "autoload": {
+    "classmap": ["includes/"]
+  }
+}
