@@ -3,148 +3,249 @@ namespace TradeCRM;
 
 defined( 'ABSPATH' ) || exit;
 
-/** Versioned default activity catalogue. Keep the seed order stable after release. */
+/** Immutable catalogue identities; content upgrades are independent of schema upgrades. */
 final class IndustryCatalog {
-	public static function tree(): array {
-		return array(
-			'کشاورزی، باغبانی و نهاده‌ها' => array( 'بذر و نهال' => array(), 'کود' => array(), 'سموم و حفاظت گیاه' => array(), 'گل و گیاه' => array(), 'تجهیزات گلخانه' => array(), 'آبیاری' => array(), 'خدمات کشاورزی' => array() ),
-			'دام، طیور و شیلات' => array( 'دام زنده' => array(), 'طیور' => array(), 'آبزیان' => array(), 'خوراک و مکمل دام' => array(), 'تجهیزات پرورش' => array(), 'دامپزشکی' => array() ),
-			'مواد غذایی و نوشیدنی' => array( 'میوه و سبزی تازه' => array(), 'برنج و غلات' => array(), 'حبوبات' => array(), 'خشکبار و آجیل' => array( 'پسته' => array(), 'بادام' => array(), 'گردو' => array(), 'فندق' => array(), 'بادام‌هندی' => array() ), 'میوه خشک' => array( 'خرما' => array(), 'کشمش' => array(), 'انجیر خشک' => array(), 'برگه و میوه خشک مخلوط' => array() ), 'گوشت و فرآورده‌های پروتئینی' => array(), 'لبنیات' => array(), 'روغن' => array(), 'ادویه و چاشنی' => array( 'زعفران' => array(), 'ادویه' => array(), 'رب و سس' => array(), 'ترشی و شور' => array() ), 'شیرینی و تنقلات' => array(), 'نوشیدنی' => array( 'چای' => array(), 'قهوه' => array(), 'دمنوش' => array(), 'آبمیوه' => array(), 'آب و نوشیدنی بسته‌بندی' => array() ), 'کنسرو و غذای آماده' => array() ),
-			'نساجی، پوشاک و چرم' => array( 'الیاف و نخ' => array(), 'پارچه' => array(), 'پوشاک' => array( 'زنانه' => array(), 'مردانه' => array(), 'بچگانه' => array(), 'لباس کار' => array() ), 'کفش' => array(), 'کیف' => array(), 'چرم' => array(), 'منسوجات خانگی' => array(), 'ملزومات دوخت' => array() ),
-			'خانه، آشپزخانه و مبلمان' => array( 'لوازم خانگی' => array(), 'ظروف و ابزار آشپزخانه' => array(), 'مبلمان' => array(), 'کالای خواب' => array(), 'فرش و کف‌پوش' => array(), 'دکوراسیون' => array(), 'روشنایی خانگی' => array() ),
-			'ساختمان، عمران و تأسیسات' => array( 'سیمان و بتن' => array(), 'آجر و بلوک' => array(), 'سنگ ساختمانی' => array( 'مرمریت' => array(), 'تراورتن' => array(), 'گرانیت' => array(), 'مرمر' => array() ), 'کاشی و سرامیک' => array(), 'در و پنجره' => array(), 'لوله و اتصالات' => array(), 'شیرآلات' => array(), 'گرمایش و سرمایش' => array(), 'عایق' => array(), 'خدمات ساختمانی' => array() ),
-			'معدن، فلزات و مواد معدنی' => array( 'مواد معدنی' => array(), 'فولاد و آهن' => array(), 'فلزات غیرآهنی' => array( 'مس' => array(), 'آلومینیوم' => array(), 'روی' => array(), 'سرب' => array() ), 'مقاطع و ورق' => array(), 'ریخته‌گری' => array(), 'فرآوری معدن' => array(), 'مصنوعات فلزی' => array() ),
-			'نفت، گاز و مواد شیمیایی' => array( 'فرآورده‌های نفتی' => array(), 'گاز و تجهیزات' => array(), 'روانکار' => array(), 'مواد شیمیایی پایه' => array(), 'مواد شیمیایی تخصصی' => array(), 'رنگ و رزین' => array(), 'چسب و درزگیر' => array() ),
-			'پلیمر، پلاستیک و لاستیک' => array( 'مواد اولیه پلیمری' => array(), 'گرانول' => array(), 'قطعات پلاستیکی' => array(), 'فیلم و ورق' => array(), 'قطعات لاستیکی' => array(), 'افزودنی‌های پلیمری' => array() ),
-			'چوب، کاغذ، چاپ و بسته‌بندی' => array( 'چوب و فرآورده‌ها' => array(), 'کاغذ و مقوا' => array(), 'کارتن' => array(), 'ظروف و ملزومات بسته‌بندی' => array(), 'چاپ' => array(), 'برچسب و لیبل' => array(), 'تجهیزات چاپ و بسته‌بندی' => array() ),
-			'ماشین‌آلات، ابزار و تجهیزات صنعتی' => array( 'ماشین‌آلات تولید' => array(), 'ابزار دستی' => array(), 'ابزار برقی' => array(), 'پمپ و کمپرسور' => array(), 'انتقال قدرت' => array(), 'هیدرولیک و پنوماتیک' => array(), 'جوش و برش' => array(), 'ایمنی صنعتی' => array(), 'تجهیزات اندازه‌گیری' => array() ),
-			'برق، الکترونیک و انرژی' => array( 'سیم و کابل' => array(), 'تابلو و تجهیزات برق' => array(), 'قطعات الکترونیک' => array(), 'کنترل و اتوماسیون' => array(), 'باتری و ذخیره انرژی' => array(), 'انرژی خورشیدی' => array( 'پنل' => array(), 'اینورتر' => array(), 'سازه و متعلقات' => array() ), 'مولد و تجهیزات نیروگاهی' => array() ),
-			'وسایل نقلیه و قطعات' => array( 'خودرو' => array(), 'قطعات خودرو' => array( 'موتور' => array(), 'جلوبندی و تعلیق' => array(), 'برق خودرو' => array(), 'بدنه' => array(), 'ترمز' => array() ), 'موتورسیکلت و دوچرخه' => array(), 'خودرو سنگین' => array(), 'ماشین‌آلات راه‌سازی' => array(), 'تجهیزات دریایی' => array(), 'تجهیزات ریلی' => array() ),
-			'رایانه، ارتباطات و تجهیزات اداری' => array( 'رایانه و قطعات' => array(), 'موبایل و لوازم جانبی' => array(), 'شبکه و مخابرات' => array(), 'تجهیزات نظارتی و امنیتی' => array(), 'چاپگر و تجهیزات اداری' => array(), 'نوشت‌افزار' => array() ),
-			'پزشکی، دارویی و آزمایشگاهی' => array( 'تجهیزات پزشکی' => array(), 'تجهیزات دندانپزشکی' => array(), 'تجهیزات آزمایشگاهی' => array(), 'مواد مصرفی پزشکی' => array( 'پانسمان' => array(), 'دستکش' => array(), 'سرنگ و تزریق' => array(), 'اقلام یک‌بارمصرف' => array() ), 'دارو و مواد اولیه' => array(), 'تجهیزات توان‌بخشی' => array(), 'خدمات سلامت' => array() ),
-			'آرایشی، بهداشتی و شوینده' => array( 'مراقبت پوست' => array(), 'مراقبت مو' => array(), 'لوازم آرایش' => array(), 'عطر' => array(), 'بهداشت فردی' => array(), 'شوینده خانگی' => array(), 'شوینده صنعتی' => array() ),
-			'کودک، اسباب‌بازی و ورزش' => array( 'سیسمونی' => array(), 'اسباب‌بازی' => array(), 'بازی و سرگرمی' => array(), 'تجهیزات ورزشی' => array(), 'کوهنوردی و کمپینگ' => array(), 'تجهیزات تفریحی' => array() ),
-			'طلا، زیورآلات، صنایع‌دستی و هدیه' => array( 'طلا و جواهر' => array(), 'نقره' => array(), 'زیورآلات' => array(), 'ساعت' => array(), 'صنایع‌دستی' => array(), 'آثار هنری' => array(), 'هدایا و اقلام تبلیغاتی' => array() ),
-			'محیط‌زیست و بازیافت' => array( 'ضایعات فلزی' => array(), 'ضایعات پلیمری' => array(), 'ضایعات کاغذ' => array(), 'بازیافت الکترونیک' => array(), 'تصفیه آب و فاضلاب' => array(), 'مدیریت پسماند' => array(), 'خدمات محیط‌زیست' => array() ),
-			'حمل‌ونقل، انبارداری و خدمات تجاری' => array( 'حمل زمینی' => array( 'داخلی' => array(), 'بین‌المللی' => array() ), 'حمل دریایی' => array(), 'حمل هوایی' => array(), 'پست و ارسال' => array(), 'انبارداری' => array(), 'زنجیره سرد' => array(), 'ترخیص و امور گمرکی' => array(), 'بازرسی کالا' => array(), 'خدمات تأمین کالا' => array() ),
-			'فناوری اطلاعات و خدمات مهندسی' => array( 'توسعه نرم‌افزار' => array( 'سازمانی' => array(), 'فروشگاهی' => array(), 'موبایل' => array() ), 'طراحی وب' => array(), 'خدمات شبکه' => array(), 'امنیت اطلاعات' => array(), 'داده و هوش مصنوعی' => array(), 'طراحی و مهندسی' => array(), 'نصب و نگهداری صنعتی' => array(), 'تعمیرات صنعتی' => array() ),
-			'مالی، حقوقی، بیمه و خدمات کسب‌وکار' => array( 'حسابداری و حسابرسی' => array(), 'خدمات مالی' => array(), 'بیمه' => array(), 'خدمات حقوقی' => array(), 'ثبت و مجوزها' => array(), 'منابع انسانی' => array(), 'مشاوره مدیریت' => array(), 'ترجمه و خدمات اداری' => array() ),
-			'تبلیغات، رسانه، فرهنگ و آموزش' => array( 'تبلیغات و بازاریابی' => array(), 'طراحی گرافیک' => array(), 'عکاسی و ویدئو' => array(), 'رسانه و تولید محتوا' => array(), 'نشر و کتاب' => array(), 'آموزش' => array(), 'نمایشگاه و رویداد' => array() ),
-			'گردشگری، اقامت و پذیرایی' => array( 'خدمات سفر' => array(), 'هتل و اقامتگاه' => array(), 'رستوران و تهیه غذا' => array(), 'کافه' => array(), 'خدمات گردشگری' => array(), 'تجهیزات هتل و رستوران' => array() ),
-			'املاک، خدمات عمومی و شخصی' => array( 'خدمات املاک' => array(), 'مدیریت ساختمان' => array(), 'نظافت' => array(), 'فضای سبز' => array(), 'تعمیرات لوازم خانگی' => array(), 'خدمات زیبایی' => array(), 'خدمات مراسم' => array() ),
-		);
+	public const VERSION = '2';
+	private const VERSION_OPTION = 'trade_crm_industry_catalog_version';
+	private const KEYS_OPTION = 'trade_crm_industry_seeded_keys';
+	private const REPORT_OPTION = 'trade_crm_industry_catalog_report';
+	private const LOCK_OPTION = 'trade_crm_industry_catalog_lock';
+	private static string $error = '';
+
+	public static function definitions(): array {
+		static $entries;
+		if ( null === $entries ) {
+			$path = dirname( __DIR__ ) . '/data/industry-catalog.json';
+			$source = is_readable( $path ) ? file_get_contents( $path ) : false;
+			if ( false === $source ) {
+				throw new \RuntimeException( 'Missing industry catalogue data.' );
+			}
+			$data = json_decode( $source, true, 512, JSON_THROW_ON_ERROR );
+			if ( ( $data['version'] ?? null ) !== self::VERSION || ! is_array( $data['entries'] ?? null ) ) {
+				throw new \RuntimeException( 'Invalid industry catalogue version.' );
+			}
+			$entries = self::ordered( $data['entries'] );
+		}
+		return $entries;
 	}
 
-	public static function seed(): bool {
-		global $wpdb;
-		$tables = Tables::names();
-		$option = 'trade_crm_industry_seeded_keys';
-		$lock   = 'trade_crm_industry_catalog_lock';
-		if ( false === $wpdb->query( 'START TRANSACTION' ) ) {
-			return false;
+	public static function tree(): array {
+		$children = array();
+		foreach ( self::definitions() as $entry ) {
+			$children[ $entry['parent_key'] ?? '' ][] = $entry;
 		}
-		$lock_id = $wpdb->get_var( $wpdb->prepare( "SELECT option_id FROM {$wpdb->options} WHERE option_name=%s FOR UPDATE", $lock ) );
-		if ( ! $lock_id ) {
-			$wpdb->query( 'ROLLBACK' );
-			return false;
-		}
-		$stored = $wpdb->get_var( $wpdb->prepare( "SELECT option_value FROM {$wpdb->options} WHERE option_name=%s", $option ) );
-		$processed = is_string( $stored ) ? maybe_unserialize( $stored ) : array();
-		$processed = is_array( $processed ) ? $processed : array();
-		$ids = array();
-		$ordinal = 0;
-		foreach ( self::tree() as $root_name => $children ) {
-			$ordinal++;
-			$root_key = sprintf( 'catalog-1:%02d', $ordinal );
-			$root_id = self::seed_node( (string) $root_name, 0, $root_key, $processed, $tables['industries'], $wpdb );
-			if ( $root_id > 0 ) {
-				$ids[ $root_key ] = $root_id;
+		$build = static function ( string $key ) use ( &$build, $children ): array {
+			$result = array();
+			foreach ( $children[ $key ] ?? array() as $entry ) {
+				$result[ $entry['name'] ] = $build( $entry['key'] );
 			}
-			$child_number = 0;
-			foreach ( $children as $child_name => $grandchildren ) {
-				$child_number++;
-				$child_key = $root_key . ':' . sprintf( '%02d', $child_number );
-				if ( $root_id < 1 ) {
-					self::remember_missing( $child_key, $processed );
+			return $result;
+		};
+		return $build( '' );
+	}
+
+	/** Validate and topologically order records without deriving identities from order. */
+	private static function ordered( array $entries ): array {
+		$by_key = array(); $siblings = array();
+		foreach ( $entries as $entry ) {
+			$key = $entry['key'] ?? null;
+			$parent = $entry['parent_key'] ?? null;
+			$name = $entry['name'] ?? null;
+			if ( ! is_string( $key ) || ! preg_match( '/^[a-z0-9:._-]{1,64}$/D', $key ) || isset( $by_key[ $key ] ) || ! array_key_exists( 'parent_key', $entry ) || ( null !== $parent && ! is_string( $parent ) ) || ! is_string( $name ) || '' === trim( $name ) || mb_strlen( $name ) > 120 ) {
+				throw new \RuntimeException( 'Invalid or duplicate industry definition.' );
+			}
+			$normalized = Normalizer::text( $name );
+			if ( isset( $siblings[ $parent ?? '' ][ $normalized ] ) ) {
+				throw new \RuntimeException( 'Duplicate sibling industry name.' );
+			}
+			$siblings[ $parent ?? '' ][ $normalized ] = true;
+			$by_key[ $key ] = $entry;
+		}
+		$state = array(); $depths = array(); $ordered = array();
+		$visit = static function ( string $key ) use ( &$visit, &$state, &$depths, &$ordered, $by_key ): void {
+			if ( 2 === ( $state[ $key ] ?? 0 ) ) {
+				return;
+			}
+			if ( 1 === ( $state[ $key ] ?? 0 ) || ! isset( $by_key[ $key ] ) ) {
+				throw new \RuntimeException( 'Missing or cyclic industry parent.' );
+			}
+			$state[ $key ] = 1;
+			$parent = $by_key[ $key ]['parent_key'];
+			if ( null !== $parent ) {
+				$visit( $parent );
+			}
+			$depths[ $key ] = null === $parent ? 1 : $depths[ $parent ] + 1;
+			if ( $depths[ $key ] > 3 ) {
+				throw new \RuntimeException( 'Industry definition exceeds three levels.' );
+			}
+			$state[ $key ] = 2;
+			$ordered[] = $by_key[ $key ];
+		};
+		foreach ( array_keys( $by_key ) as $key ) {
+			$visit( $key );
+		}
+		return $ordered;
+	}
+
+	public static function maybe_upgrade(): bool {
+		return self::VERSION === (string) get_option( self::VERSION_OPTION, '' ) || self::seed( false );
+	}
+
+	public static function last_error(): string {
+		return self::$error;
+	}
+
+	/** Reconcile defaults while preserving identities, tombstones and user customizations. */
+	public static function seed( bool $force = true ): bool {
+		global $wpdb;
+		self::$error = '';
+		$previous_suppression = $wpdb->suppress_errors( true );
+		$transaction = false;
+		try {
+			$definitions = self::definitions();
+			$table = Tables::names()['industries'];
+			add_option( self::LOCK_OPTION, '1', '', false );
+			if ( false === $wpdb->query( 'START TRANSACTION' ) ) {
+				throw new \RuntimeException( 'Cannot begin catalogue transaction.' );
+			}
+			$transaction = true;
+			$lock = $wpdb->get_var( $wpdb->prepare( "SELECT option_id FROM {$wpdb->options} WHERE option_name=%s FOR UPDATE", self::LOCK_OPTION ) );
+			if ( ! $lock ) {
+				throw new \RuntimeException( 'Cannot lock industry catalogue.' );
+			}
+			$revision = self::read_option( self::VERSION_OPTION, $wpdb );
+			if ( ! $force && self::VERSION === $revision ) {
+				if ( false === $wpdb->query( 'COMMIT' ) ) {
+					throw new \RuntimeException( 'Cannot commit catalogue transaction.' );
+				}
+				wp_cache_delete( self::VERSION_OPTION, 'options' );
+				wp_cache_delete( 'notoptions', 'options' );
+				return true;
+			}
+			$stored = self::read_option( self::KEYS_OPTION, $wpdb );
+			$processed = is_string( $stored ) ? maybe_unserialize( $stored ) : array();
+			$processed = is_array( $processed ) ? $processed : array();
+			$rows = $wpdb->get_results( "SELECT id,parent_id,name,name_normalized,seed_key,is_active FROM {$table}", ARRAY_A );
+			if ( ! is_array( $rows ) || $wpdb->last_error ) {
+				throw new \RuntimeException( 'Cannot read industry catalogue.' );
+			}
+			$by_id = array(); $by_seed = array(); $by_name = array();
+			foreach ( $rows as $row ) {
+				$id = (int) $row['id'];
+				$by_id[ $id ] = $row;
+				$by_name[ (int) $row['parent_id'] ][ $row['name_normalized'] ] = $id;
+				if ( $row['seed_key'] ) {
+					$by_seed[ $row['seed_key'] ] = $id;
+				}
+			}
+			$resolved = array(); $skipped = array(); $added = 0; $reused = 0;
+			foreach ( $definitions as $entry ) {
+				$key = $entry['key'];
+				if ( array_key_exists( $key, $processed ) ) {
+					$id = (int) $processed[ $key ];
+					$resolved[ $key ] = isset( $by_id[ $id ] ) ? $id : 0;
+					if ( ! $resolved[ $key ] ) {
+						$skipped[ $key ] = 'previously_removed';
+					}
 					continue;
 				}
-				$child_id = self::seed_node( (string) $child_name, $root_id, $child_key, $processed, $tables['industries'], $wpdb );
-				if ( $child_id > 0 ) {
-					$ids[ $child_key ] = $child_id;
+				if ( isset( $by_seed[ $key ] ) ) {
+					$resolved[ $key ] = $processed[ $key ] = $by_seed[ $key ];
+					$reused++;
+					continue;
 				}
-				$leaf_number = 0;
-				foreach ( $grandchildren as $leaf_name => $_unused ) {
-					$leaf_number++;
-					$leaf_key = $child_key . ':' . sprintf( '%02d', $leaf_number );
-					if ( $child_id < 1 ) {
-						self::remember_missing( $leaf_key, $processed );
-						continue;
+				$parent_id = null === $entry['parent_key'] ? 0 : ( $resolved[ $entry['parent_key'] ] ?? 0 );
+				if ( null !== $entry['parent_key'] && ! $parent_id ) {
+					$resolved[ $key ] = $processed[ $key ] = 0;
+					$skipped[ $key ] = 'missing_parent';
+					continue;
+				}
+				$depth = self::actual_depth( $parent_id, $by_id );
+				if ( null === $depth || $depth >= 3 ) {
+					$resolved[ $key ] = $processed[ $key ] = 0;
+					$skipped[ $key ] = null === $depth ? 'invalid_parent' : 'max_depth';
+					continue;
+				}
+				$normalized = Normalizer::text( $entry['name'] );
+				$id = $by_name[ $parent_id ][ $normalized ] ?? 0;
+				if ( $id ) {
+					if ( ! $by_id[ $id ]['seed_key'] ) {
+						if ( false === $wpdb->update( $table, array( 'seed_key' => $key ), array( 'id' => $id ), array( '%s' ), array( '%d' ) ) ) {
+							throw new \RuntimeException( 'Cannot adopt existing industry.' );
+						}
+						$by_id[ $id ]['seed_key'] = $key;
+						$by_seed[ $key ] = $id;
 					}
-					$leaf_id = self::seed_node( (string) $leaf_name, $child_id, $leaf_key, $processed, $tables['industries'], $wpdb );
-					if ( $leaf_id > 0 ) {
-						$ids[ $leaf_key ] = $leaf_id;
+					$reused++;
+				} else {
+					$row = array( 'parent_id' => $parent_id, 'name' => $entry['name'], 'name_normalized' => $normalized, 'seed_key' => $key, 'is_active' => 1, 'created_at' => Repository::now() );
+					if ( false === $wpdb->insert( $table, $row ) || ! $wpdb->insert_id ) {
+						throw new \RuntimeException( 'Cannot insert industry.' );
 					}
+					$id = (int) $wpdb->insert_id;
+					$by_id[ $id ] = array_merge( $row, array( 'id' => $id ) );
+					$by_seed[ $key ] = $id;
+					$by_name[ $parent_id ][ $normalized ] = $id;
+					$added++;
+				}
+				$resolved[ $key ] = $processed[ $key ] = $id;
+			}
+			// Historical keys may outlive definitions; never discard their tombstones.
+			foreach ( $definitions as $entry ) {
+				if ( ! array_key_exists( $entry['key'], $processed ) ) {
+					throw new \RuntimeException( 'Incomplete catalogue reconciliation.' );
 				}
 			}
-		}
-		if ( count( $processed ) !== self::seed_key_count() ) {
-			$wpdb->query( 'ROLLBACK' );
-			return false;
-		}
-		$value = maybe_serialize( $processed );
-		$exists = $wpdb->get_var( $wpdb->prepare( "SELECT option_id FROM {$wpdb->options} WHERE option_name=%s", $option ) );
-		$ok = $exists
-			? false !== $wpdb->update( $wpdb->options, array( 'option_value' => $value ), array( 'option_name' => $option ), array( '%s' ), array( '%s' ) )
-			: false !== $wpdb->insert( $wpdb->options, array( 'option_name' => $option, 'option_value' => $value, 'autoload' => 'no' ), array( '%s', '%s', '%s' ) );
-		if ( ! $ok || false === $wpdb->query( 'COMMIT' ) ) {
-			$wpdb->query( 'ROLLBACK' );
-			return false;
-		}
-		wp_cache_delete( $option, 'options' );
-		wp_cache_delete( 'alloptions', 'options' );
-		return true;
-	}
-
-	private static function seed_node( string $name, int $parent_id, string $key, array &$processed, string $table, object $wpdb ): int {
-		if ( array_key_exists( $key, $processed ) ) {
-			$id = (int) $processed[ $key ];
-			return $id > 0 && $wpdb->get_var( $wpdb->prepare( "SELECT id FROM {$table} WHERE id=%d AND parent_id=%d", $id, $parent_id ) ) ? $id : 0;
-		}
-		$existing_seed = $wpdb->get_var( $wpdb->prepare( "SELECT id FROM {$table} WHERE seed_key=%s", $key ) );
-		if ( $existing_seed ) {
-			$processed[ $key ] = (int) $existing_seed;
-			return (int) $existing_seed;
-		}
-		$normalized = Normalizer::text( $name );
-		$existing = $wpdb->get_row( $wpdb->prepare( "SELECT id,seed_key FROM {$table} WHERE parent_id=%d AND name_normalized=%s", $parent_id, $normalized ), ARRAY_A );
-		if ( is_array( $existing ) ) {
-			if ( empty( $existing['seed_key'] ) ) {
-				$wpdb->update( $table, array( 'seed_key' => $key ), array( 'id' => (int) $existing['id'] ), array( '%s' ), array( '%d' ) );
+			$report = array( 'version' => self::VERSION, 'added' => $added, 'reused' => $reused, 'skipped_count' => count( $skipped ), 'skipped' => $skipped );
+			self::write_option( self::KEYS_OPTION, maybe_serialize( $processed ), $wpdb );
+			self::write_option( self::REPORT_OPTION, maybe_serialize( $report ), $wpdb );
+			self::write_option( self::VERSION_OPTION, self::VERSION, $wpdb );
+			if ( false === $wpdb->query( 'COMMIT' ) ) {
+				throw new \RuntimeException( 'Cannot commit industry catalogue.' );
 			}
-			$processed[ $key ] = (int) $existing['id'];
-			return (int) $existing['id'];
-		}
-		if ( false === $wpdb->insert( $table, array( 'parent_id' => $parent_id, 'name' => $name, 'name_normalized' => $normalized, 'seed_key' => $key, 'is_active' => 1, 'created_at' => Repository::now() ) ) ) {
-			return 0;
-		}
-		$processed[ $key ] = (int) $wpdb->insert_id;
-		return (int) $wpdb->insert_id;
-	}
-
-	private static function remember_missing( string $key, array &$processed ): void {
-		if ( ! array_key_exists( $key, $processed ) ) {
-			$processed[ $key ] = 0;
-		}
-	}
-
-	private static function seed_key_count(): int {
-		$count = 0;
-		foreach ( self::tree() as $children ) {
-			$count++;
-			foreach ( $children as $grandchildren ) {
-				$count += 1 + count( $grandchildren );
+			$transaction = false;
+			foreach ( array( self::KEYS_OPTION, self::REPORT_OPTION, self::VERSION_OPTION ) as $option ) {
+				wp_cache_delete( $option, 'options' );
 			}
+			wp_cache_delete( 'alloptions', 'options' );
+			wp_cache_delete( 'notoptions', 'options' );
+			return true;
+		} catch ( \Throwable $error ) {
+			if ( $transaction ) {
+				$wpdb->query( 'ROLLBACK' );
+			}
+			self::$error = 'به‌روزرسانی فهرست حوزه‌های فعالیت انجام نشد. اتصال و مجوز نوشتن پایگاه داده را بررسی کنید؛ با بازکردن دوباره پیشخوان، تلاش مجدد انجام می‌شود.';
+			return false;
+		} finally {
+			$wpdb->suppress_errors( $previous_suppression );
 		}
-		return $count;
+	}
+
+	private static function actual_depth( int $id, array $rows ): ?int {
+		$seen = array(); $depth = 0;
+		while ( $id ) {
+			if ( isset( $seen[ $id ] ) || ! isset( $rows[ $id ] ) || $depth >= 3 ) {
+				return null;
+			}
+			$seen[ $id ] = true;
+			$depth++;
+			$id = (int) $rows[ $id ]['parent_id'];
+		}
+		return $depth;
+	}
+
+	private static function read_option( string $name, object $wpdb ): ?string {
+		$value = $wpdb->get_var( $wpdb->prepare( "SELECT option_value FROM {$wpdb->options} WHERE option_name=%s", $name ) );
+		if ( $wpdb->last_error ) {
+			throw new \RuntimeException( 'Cannot read catalogue metadata.' );
+		}
+		return $value;
+	}
+
+	private static function write_option( string $name, string $value, object $wpdb ): void {
+		$sql = $wpdb->prepare( "INSERT INTO {$wpdb->options} (option_name,option_value,autoload) VALUES (%s,%s,'no') ON DUPLICATE KEY UPDATE option_value=VALUES(option_value),autoload='no'", $name, $value );
+		if ( false === $wpdb->query( $sql ) ) {
+			throw new \RuntimeException( 'Cannot write catalogue metadata.' );
+		}
 	}
 }

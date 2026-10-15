@@ -13,6 +13,7 @@ final class Plugin {
 		add_action( 'login_init', array( new Login(), 'boot' ) );
 		add_action( 'wp_login', array( $this, 'refresh_issued_nonce_state' ), 10, 2 );
 		add_action( 'admin_notices', array( $this, 'dependency_notice' ) );
+		add_action( 'admin_notices', array( $this, 'catalog_notice' ) );
 		add_action( 'rest_api_init', array( Rest::instance(), 'register_routes' ) );
 		add_filter( 'rest_post_dispatch', array( Rest::instance(), 'no_store_private_responses' ), 10, 3 );
 	}
@@ -23,7 +24,7 @@ final class Plugin {
 			wp_die( esc_html( $conflict ) );
 		}
 		if ( ! Tables::install() ) {
-			wp_die( esc_html__( 'ساخت جداول CRM انجام نشد. پایگاه داده را بررسی کنید و دوباره افزونه را فعال کنید.', 'trade-crm' ) );
+			wp_die( esc_html__( 'آماده‌سازی جداول یا فهرست حوزه‌های CRM انجام نشد. پایگاه داده را بررسی کنید و دوباره افزونه را فعال کنید.', 'trade-crm' ) );
 		}
 		self::add_role_caps();
 		App::add_rewrite_rules();
@@ -37,12 +38,17 @@ final class Plugin {
 		if ( ! current_user_can( 'activate_plugins' ) || wp_doing_ajax() || wp_doing_cron() ) {
 			return;
 		}
-		if ( TRADE_CRM_VERSION === get_option( 'trade_crm_plugin_version' ) && TRADE_CRM_DB_VERSION === get_option( 'trade_crm_db_version' ) ) {
+		$plugin_changed = TRADE_CRM_VERSION !== get_option( 'trade_crm_plugin_version' );
+		$schema_changed = TRADE_CRM_DB_VERSION !== get_option( 'trade_crm_db_version' );
+		if ( ! $plugin_changed && ! $schema_changed && IndustryCatalog::VERSION === (string) get_option( 'trade_crm_industry_catalog_version', '' ) ) {
 			return;
 		}
-		$error = self::route_conflict();
-		if ( ! $error && TRADE_CRM_DB_VERSION !== get_option( 'trade_crm_db_version' ) && ! Tables::install() ) {
+		$error = $plugin_changed || $schema_changed ? self::route_conflict() : '';
+		if ( ! $error && $schema_changed && ! Tables::install() ) {
 			$error = 'ارتقای جداول CRM انجام نشد. پشتیبان پایگاه داده و مجوز نوشتن کاربر وردپرس را بررسی کنید.';
+		}
+		if ( ! $error && ! IndustryCatalog::maybe_upgrade() ) {
+			$error = IndustryCatalog::last_error();
 		}
 		if ( $error ) {
 			add_action( 'admin_notices', static function () use ( $error ): void {
@@ -50,9 +56,22 @@ final class Plugin {
 			} );
 			return;
 		}
-		self::add_role_caps();
-		flush_rewrite_rules( false );
-		update_option( 'trade_crm_plugin_version', TRADE_CRM_VERSION, false );
+		if ( $plugin_changed || $schema_changed ) {
+			self::add_role_caps();
+			flush_rewrite_rules( false );
+			update_option( 'trade_crm_plugin_version', TRADE_CRM_VERSION, false );
+		}
+	}
+
+	public function catalog_notice(): void {
+		if ( ! current_user_can( 'activate_plugins' ) ) {
+			return;
+		}
+		$report = get_option( 'trade_crm_industry_catalog_report', array() );
+		if ( is_array( $report ) && IndustryCatalog::VERSION === ( $report['version'] ?? '' ) && ! empty( $report['skipped_count'] ) ) {
+			$message = sprintf( 'برای حفظ تغییرات قبلی شما، %d مورد از فهرست پیش‌فرض حوزه‌ها به‌دلیل حذف یا جابه‌جایی دسته‌ها ساخته نشد. در صورت نیاز، حوزهٔ موردنظر را از تنظیمات CRM اضافه کنید.', (int) $report['skipped_count'] );
+			echo '<div class="notice notice-warning is-dismissible"><p>' . esc_html( $message ) . '</p></div>';
+		}
 	}
 
 	public static function deactivate(): void {

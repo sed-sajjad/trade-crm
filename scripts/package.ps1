@@ -1,13 +1,20 @@
-param([Parameter(Mandatory=$true)][string]$OutputZip)
+param([Parameter(Mandatory=$true)][string]$OutputZip, [switch]$Source)
 $ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 $pluginRoot = [System.IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
 $zipPath = [System.IO.Path]::GetFullPath($OutputZip)
 if (Test-Path -LiteralPath $zipPath) { throw "Output already exists: $zipPath" }
 $includeFiles = @('trade-crm.php', 'README.fa.md', 'composer.json', 'composer.lock')
+if ($Source) {
+    $includeFiles += @('package.json', 'pnpm-lock.yaml', 'pnpm-workspace.yaml', 'tsconfig.json', 'vite.config.ts', 'index.html', 'phpunit.xml.dist', '.gitignore')
+}
 $files = @($includeFiles | ForEach-Object { Get-Item -LiteralPath (Join-Path $pluginRoot $_) })
-foreach ($directory in @('includes', 'assets', 'vendor', 'docs')) {
-    $files += @(Get-ChildItem -LiteralPath (Join-Path $pluginRoot $directory) -File -Recurse)
+$directories = @('includes', 'assets', 'docs', 'data')
+if ($Source) { $directories += @('src', 'tests', 'scripts') } else { $directories += @('vendor') }
+foreach ($directory in $directories) {
+    $files += @(Get-ChildItem -LiteralPath (Join-Path $pluginRoot $directory) -File -Recurse | Where-Object {
+        -not $Source -or $_.FullName -notlike (Join-Path $pluginRoot 'assets\build\*')
+    })
 }
 $stream = [System.IO.File]::Open($zipPath, [System.IO.FileMode]::CreateNew)
 $zip = [System.IO.Compression.ZipArchive]::new($stream, [System.IO.Compression.ZipArchiveMode]::Create)

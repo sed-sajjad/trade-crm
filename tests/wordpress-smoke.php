@@ -21,7 +21,7 @@ $assert = static function ( bool $condition, string $message ): void {
 };
 
 $assert( is_plugin_active( 'trade-crm/trade-crm.php' ), 'The CRM plugin must be active.' );
-$assert( '1.1.0' === get_option( 'trade_crm_db_version' ), 'The CRM schema version was not installed.' );
+$assert( TRADE_CRM_DB_VERSION === get_option( 'trade_crm_db_version' ), 'The CRM schema version was not installed.' );
 foreach ( \TradeCRM\Tables::names() as $table ) {
 	$found = $GLOBALS['wpdb']->get_var( $GLOBALS['wpdb']->prepare( 'SHOW TABLES LIKE %s', $GLOBALS['wpdb']->esc_like( $table ) ) );
 	$assert( $found === $table, 'A CRM database table is missing.' );

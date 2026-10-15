@@ -265,6 +265,10 @@ final class Rest {
 		}
 		$input['contact']['assigned_user_id'] = $assigned_id ?: null;
 		$input['contact']['assigned_user_name'] = $assigned_name;
+		if ( ! $request->has_param( 'website' ) ) {
+			$input['contact']['website'] = $old['website'];
+			$input['contact']['search_text'] = Normalizer::text( $input['contact']['search_text'] . ' ' . $old['website'] );
+		}
 		$input['contact']['updated_by'] = (int) $user->ID;
 		$input['contact']['updated_by_name'] = $this->actor_name( $user );
 		$input['contact']['updated_at'] = Repository::now();
@@ -664,12 +668,30 @@ final class Rest {
 		}
 		$email_raw = trim( (string) ( $raw['email'] ?? '' ) );
 		$email = sanitize_email( $email_raw );
+		if ( isset( $raw['website'] ) && ! is_string( $raw['website'] ) ) {
+			return $this->field_error( 'website', 'آدرس سایت معتبر با http یا https وارد کنید.' );
+		}
+		$website = trim( $raw['website'] ?? '' );
+		if ( '' !== $website ) {
+			if ( ! preg_match( '~^[a-z][a-z0-9+.-]*:~i', $website ) ) {
+				$website = 'https://' . ltrim( $website, '/' );
+			}
+			$parts = wp_parse_url( $website );
+			if ( mb_strlen( $website ) > 2048 || preg_match( '/[\s<>"\x00-\x1f\x7f]/u', $website ) || ! is_array( $parts ) || empty( $parts['host'] ) || ! in_array( strtolower( $parts['scheme'] ?? '' ), array( 'http', 'https' ), true ) || isset( $parts['user'] ) || isset( $parts['pass'] ) ) {
+				return $this->field_error( 'website', 'آدرس سایت معتبر با http یا https وارد کنید.' );
+			}
+			$website = esc_url_raw( $website, array( 'http', 'https' ) );
+			if ( '' === $website ) {
+				return $this->field_error( 'website', 'آدرس سایت معتبر با http یا https وارد کنید.' );
+			}
+		}
 		$fields = array(
 			'name' => $name,
 			'first_name' => mb_substr( sanitize_text_field( (string) ( $raw['first_name'] ?? '' ) ), 0, 100 ),
 			'last_name' => mb_substr( sanitize_text_field( (string) ( $raw['last_name'] ?? '' ) ), 0, 100 ),
 			'company' => mb_substr( sanitize_text_field( (string) ( $raw['company'] ?? '' ) ), 0, 190 ),
 			'email' => $email,
+			'website' => $website,
 			'telegram' => $this->social_handle( (string) ( $raw['telegram'] ?? '' ) ),
 			'instagram' => $this->social_handle( (string) ( $raw['instagram'] ?? '' ) ),
 			'country_code' => $country,
@@ -689,7 +711,7 @@ final class Rest {
 		}
 		$assignment_provided = array_key_exists( 'assigned_user_id', $raw );
 		$assigned_id = $assignment_provided ? absint( $raw['assigned_user_id'] ) : 0;
-		$search_values = array( $fields['name'], $fields['first_name'], $fields['last_name'], $fields['company'], $fields['email'], $fields['telegram'], $fields['instagram'], $fields['city'] );
+		$search_values = array( $fields['name'], $fields['first_name'], $fields['last_name'], $fields['company'], $fields['email'], $fields['website'], $fields['telegram'], $fields['instagram'], $fields['city'] );
 		$fields['search_text'] = Normalizer::text( implode( ' ', array_filter( $search_values ) ) );
 		return array( 'contact' => $fields, 'numbers' => array_values( $numbers_by_e164 ), 'industry_ids' => $industry_ids, 'assigned_user_id' => $assigned_id, 'assigned_user_provided' => $assignment_provided );
 	}
@@ -761,7 +783,7 @@ final class Rest {
 	}
 
 	private function contact_changes( array $old, array $new ): array {
-		$map = array( 'name' => 'نام مخاطب', 'first_name' => 'نام', 'last_name' => 'نام خانوادگی', 'company' => 'شرکت', 'email' => 'ایمیل', 'telegram' => 'تلگرام', 'instagram' => 'اینستاگرام', 'source' => 'منبع آشنایی', 'status' => 'وضعیت', 'followup_at' => 'موعد پیگیری', 'followup_topic' => 'موضوع پیگیری', 'city' => 'شهر', 'country_code' => 'کشور', 'initial_note' => 'توضیح اولیه' );
+		$map = array( 'name' => 'نام مخاطب', 'first_name' => 'نام', 'last_name' => 'نام خانوادگی', 'company' => 'شرکت', 'email' => 'ایمیل', 'website' => 'آدرس سایت', 'telegram' => 'تلگرام', 'instagram' => 'اینستاگرام', 'source' => 'منبع آشنایی', 'status' => 'وضعیت', 'followup_at' => 'موعد پیگیری', 'followup_topic' => 'موضوع پیگیری', 'city' => 'شهر', 'country_code' => 'کشور', 'initial_note' => 'توضیح اولیه' );
 		$changes = array();
 		foreach ( $map as $key => $label ) {
 			$before = $old[ $key ] ?? '';

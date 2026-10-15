@@ -29,6 +29,7 @@ final class Tables {
 				company varchar(190) NOT NULL DEFAULT '',
 				search_text text NOT NULL,
 				email varchar(190) NOT NULL DEFAULT '',
+				website varchar(2048) NOT NULL DEFAULT '',
 				telegram varchar(190) NOT NULL DEFAULT '',
 				instagram varchar(190) NOT NULL DEFAULT '',
 				country_code char(2) NOT NULL DEFAULT 'IR',
@@ -123,6 +124,8 @@ final class Tables {
 				$ok = false;
 			}
 		}
+		$contact_columns = $wpdb->get_col( "SHOW COLUMNS FROM {$t['contacts']}", 0 );
+		$ok = $ok && in_array( 'website', $contact_columns, true );
 		$industry_columns = $wpdb->get_col( "SHOW COLUMNS FROM {$industry_table}", 0 );
 		$industry_indexes = $wpdb->get_results( "SHOW INDEX FROM {$industry_table}", ARRAY_A );
 		$has_parent_index = false;

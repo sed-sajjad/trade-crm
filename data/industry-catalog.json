@@ -1,0 +1,2740 @@
+{
+    "version": "2",
+    "entries": [
+        {
+            "key": "catalog-1:01",
+            "parent_key": null,
+            "name": "کشاورزی، باغبانی و نهاده‌ها"
+        },
+        {
+            "key": "catalog-1:01:01",
+            "parent_key": "catalog-1:01",
+            "name": "بذر و نهال"
+        },
+        {
+            "key": "catalog-2:43fbc4bb3e86ad86910b",
+            "parent_key": "catalog-1:01:01",
+            "name": "بذر سبزی و صیفی"
+        },
+        {
+            "key": "catalog-2:4d8f1d62a0b008038252",
+            "parent_key": "catalog-1:01:01",
+            "name": "بذر غلات"
+        },
+        {
+            "key": "catalog-2:5af4a45544ad5f9f91aa",
+            "parent_key": "catalog-1:01:01",
+            "name": "بذر گل"
+        },
+        {
+            "key": "catalog-2:b12fe21b6bb9c7397146",
+            "parent_key": "catalog-1:01:01",
+            "name": "نهال میوه"
+        },
+        {
+            "key": "catalog-2:0d76815b54a210716675",
+            "parent_key": "catalog-1:01:01",
+            "name": "نشای گلخانه‌ای"
+        },
+        {
+            "key": "catalog-1:01:02",
+            "parent_key": "catalog-1:01",
+            "name": "کود"
+        },
+        {
+            "key": "catalog-2:cf40692760ae3ae8a6b7",
+            "parent_key": "catalog-1:01:02",
+            "name": "کود آلی"
+        },
+        {
+            "key": "catalog-2:fc9e7323b90b4f129ebc",
+            "parent_key": "catalog-1:01:02",
+            "name": "کود شیمیایی"
+        },
+        {
+            "key": "catalog-2:3c7c9bb3526278054f7e",
+            "parent_key": "catalog-1:01:02",
+            "name": "کود زیستی"
+        },
+        {
+            "key": "catalog-2:57fc3c0ed46ec0923ec5",
+            "parent_key": "catalog-1:01:02",
+            "name": "ریزمغذی"
+        },
+        {
+            "key": "catalog-2:3b5d04a8126b02762cb7",
+            "parent_key": "catalog-1:01:02",
+            "name": "کود مایع"
+        },
+        {
+            "key": "catalog-1:01:03",
+            "parent_key": "catalog-1:01",
+            "name": "سموم و حفاظت گیاه"
+        },
+        {
+            "key": "catalog-1:01:04",
+            "parent_key": "catalog-1:01",
+            "name": "گل و گیاه"
+        },
+        {
+            "key": "catalog-1:01:05",
+            "parent_key": "catalog-1:01",
+            "name": "تجهیزات گلخانه"
+        },
+        {
+            "key": "catalog-1:01:06",
+            "parent_key": "catalog-1:01",
+            "name": "آبیاری"
+        },
+        {
+            "key": "catalog-1:01:07",
+            "parent_key": "catalog-1:01",
+            "name": "خدمات کشاورزی"
+        },
+        {
+            "key": "catalog-1:02",
+            "parent_key": null,
+            "name": "دام، طیور و شیلات"
+        },
+        {
+            "key": "catalog-1:02:01",
+            "parent_key": "catalog-1:02",
+            "name": "دام زنده"
+        },
+        {
+            "key": "catalog-2:674172ace56649d276b0",
+            "parent_key": "catalog-1:02:01",
+            "name": "گاو"
+        },
+        {
+            "key": "catalog-2:584965a537feda80f990",
+            "parent_key": "catalog-1:02:01",
+            "name": "گوسفند"
+        },
+        {
+            "key": "catalog-2:160d17c68046d9bac4f6",
+            "parent_key": "catalog-1:02:01",
+            "name": "بز"
+        },
+        {
+            "key": "catalog-2:b6e87d95e6ce2d92e26b",
+            "parent_key": "catalog-1:02:01",
+            "name": "گوساله"
+        },
+        {
+            "key": "catalog-2:0daf049910596d4d9a5c",
+            "parent_key": "catalog-1:02:01",
+            "name": "دام مولد"
+        },
+        {
+            "key": "catalog-1:02:02",
+            "parent_key": "catalog-1:02",
+            "name": "طیور"
+        },
+        {
+            "key": "catalog-1:02:03",
+            "parent_key": "catalog-1:02",
+            "name": "آبزیان"
+        },
+        {
+            "key": "catalog-2:a15c15ed91c199ef3538",
+            "parent_key": "catalog-1:02:03",
+            "name": "ماهی قزل‌آلا"
+        },
+        {
+            "key": "catalog-2:a0489430c795761e2211",
+            "parent_key": "catalog-1:02:03",
+            "name": "ماهی کپور"
+        },
+        {
+            "key": "catalog-2:e01193344dda42e6ddcf",
+            "parent_key": "catalog-1:02:03",
+            "name": "میگو"
+        },
+        {
+            "key": "catalog-2:a67fd7fc110815eca4c1",
+            "parent_key": "catalog-1:02:03",
+            "name": "ماهی دریایی"
+        },
+        {
+            "key": "catalog-2:edd8b7e8d6f0246ac847",
+            "parent_key": "catalog-1:02:03",
+            "name": "خاویار"
+        },
+        {
+            "key": "catalog-1:02:04",
+            "parent_key": "catalog-1:02",
+            "name": "خوراک و مکمل دام"
+        },
+        {
+            "key": "catalog-1:02:05",
+            "parent_key": "catalog-1:02",
+            "name": "تجهیزات پرورش"
+        },
+        {
+            "key": "catalog-1:02:06",
+            "parent_key": "catalog-1:02",
+            "name": "دامپزشکی"
+        },
+        {
+            "key": "catalog-1:03",
+            "parent_key": null,
+            "name": "مواد غذایی و نوشیدنی"
+        },
+        {
+            "key": "catalog-1:03:01",
+            "parent_key": "catalog-1:03",
+            "name": "میوه و سبزی تازه"
+        },
+        {
+            "key": "catalog-2:d6ed670a934a844a0636",
+            "parent_key": "catalog-1:03:01",
+            "name": "کیوی"
+        },
+        {
+            "key": "catalog-2:ef6036884e028bb78a67",
+            "parent_key": "catalog-1:03:01",
+            "name": "سیب"
+        },
+        {
+            "key": "catalog-2:1e295a527a0fa3a51904",
+            "parent_key": "catalog-1:03:01",
+            "name": "پرتقال"
+        },
+        {
+            "key": "catalog-2:904f547e88964390c377",
+            "parent_key": "catalog-1:03:01",
+            "name": "نارنگی"
+        },
+        {
+            "key": "catalog-2:47eda4aacf5660b97de9",
+            "parent_key": "catalog-1:03:01",
+            "name": "لیموترش"
+        },
+        {
+            "key": "catalog-2:09bd93adeb94e94eb0d4",
+            "parent_key": "catalog-1:03:01",
+            "name": "لیموشیرین"
+        },
+        {
+            "key": "catalog-2:97ec7db0a23d4e31ae60",
+            "parent_key": "catalog-1:03:01",
+            "name": "گریپ‌فروت"
+        },
+        {
+            "key": "catalog-2:b08c85c0b93d6bc285b3",
+            "parent_key": "catalog-1:03:01",
+            "name": "انار"
+        },
+        {
+            "key": "catalog-2:435d30a2f9f9c55681d1",
+            "parent_key": "catalog-1:03:01",
+            "name": "انگور"
+        },
+        {
+            "key": "catalog-2:0458c0fba2d714eeebe0",
+            "parent_key": "catalog-1:03:01",
+            "name": "موز"
+        },
+        {
+            "key": "catalog-2:2bdd6df5ce0df0cd2858",
+            "parent_key": "catalog-1:03:01",
+            "name": "آناناس"
+        },
+        {
+            "key": "catalog-2:136da3b5afb3828fcf03",
+            "parent_key": "catalog-1:03:01",
+            "name": "انبه"
+        },
+        {
+            "key": "catalog-2:c28e33a0d8bab8842ab7",
+            "parent_key": "catalog-1:03:01",
+            "name": "هلو"
+        },
+        {
+            "key": "catalog-2:1122c7d42eb278e4f4af",
+            "parent_key": "catalog-1:03:01",
+            "name": "شلیل"
+        },
+        {
+            "key": "catalog-2:66419b2a805ea4333d5d",
+            "parent_key": "catalog-1:03:01",
+            "name": "زردآلو"
+        },
+        {
+            "key": "catalog-2:c8d81bb4dff0530b68ab",
+            "parent_key": "catalog-1:03:01",
+            "name": "آلو"
+        },
+        {
+            "key": "catalog-2:5c1e34022b0b684d9e37",
+            "parent_key": "catalog-1:03:01",
+            "name": "گیلاس"
+        },
+        {
+            "key": "catalog-2:95db77c41b9f41a88e6f",
+            "parent_key": "catalog-1:03:01",
+            "name": "آلبالو"
+        },
+        {
+            "key": "catalog-2:abd61f94ddc44ed01624",
+            "parent_key": "catalog-1:03:01",
+            "name": "گلابی"
+        },
+        {
+            "key": "catalog-2:8a0f9d525a5dbd822bee",
+            "parent_key": "catalog-1:03:01",
+            "name": "به"
+        },
+        {
+            "key": "catalog-2:2849ff79d49ef1b811ac",
+            "parent_key": "catalog-1:03:01",
+            "name": "خرمالو"
+        },
+        {
+            "key": "catalog-2:3c14c46f268157a4a44b",
+            "parent_key": "catalog-1:03:01",
+            "name": "انجیر تازه"
+        },
+        {
+            "key": "catalog-2:0233823b061cdaabfd02",
+            "parent_key": "catalog-1:03:01",
+            "name": "توت‌فرنگی"
+        },
+        {
+            "key": "catalog-2:c33f486e9177dd54af8c",
+            "parent_key": "catalog-1:03:01",
+            "name": "هندوانه"
+        },
+        {
+            "key": "catalog-2:2da035f32e9633129c48",
+            "parent_key": "catalog-1:03:01",
+            "name": "خربزه"
+        },
+        {
+            "key": "catalog-2:7d2a6875e094a10efbd8",
+            "parent_key": "catalog-1:03:01",
+            "name": "طالبی"
+        },
+        {
+            "key": "catalog-2:5aa30f464cac0ab5da71",
+            "parent_key": "catalog-1:03:01",
+            "name": "گوجه‌فرنگی"
+        },
+        {
+            "key": "catalog-2:6ab8128abeaa48a6ae41",
+            "parent_key": "catalog-1:03:01",
+            "name": "خیار"
+        },
+        {
+            "key": "catalog-2:6072aa204b6c9ee565d8",
+            "parent_key": "catalog-1:03:01",
+            "name": "سیب‌زمینی"
+        },
+        {
+            "key": "catalog-2:c03a6314b7e618cb6247",
+            "parent_key": "catalog-1:03:01",
+            "name": "پیاز"
+        },
+        {
+            "key": "catalog-2:1379ace3aa7b7f7da69a",
+            "parent_key": "catalog-1:03:01",
+            "name": "سیر"
+        },
+        {
+            "key": "catalog-2:6bb9faf2f4c6e17a08a0",
+            "parent_key": "catalog-1:03:01",
+            "name": "هویج"
+        },
+        {
+            "key": "catalog-2:a8c65409652c8f3eedf5",
+            "parent_key": "catalog-1:03:01",
+            "name": "فلفل دلمه‌ای"
+        },
+        {
+            "key": "catalog-2:6af7586268e2973a9292",
+            "parent_key": "catalog-1:03:01",
+            "name": "بادمجان"
+        },
+        {
+            "key": "catalog-2:1eba5a4438da94923e4f",
+            "parent_key": "catalog-1:03:01",
+            "name": "کدو"
+        },
+        {
+            "key": "catalog-2:d46dff78c38aac565234",
+            "parent_key": "catalog-1:03:01",
+            "name": "کاهو"
+        },
+        {
+            "key": "catalog-2:fab5a21491e78e879103",
+            "parent_key": "catalog-1:03:01",
+            "name": "کلم"
+        },
+        {
+            "key": "catalog-2:60e4032948c25bbd94b5",
+            "parent_key": "catalog-1:03:01",
+            "name": "قارچ"
+        },
+        {
+            "key": "catalog-2:b029f732f5ec62f29d0c",
+            "parent_key": "catalog-1:03:01",
+            "name": "سبزی خوردن"
+        },
+        {
+            "key": "catalog-1:03:02",
+            "parent_key": "catalog-1:03",
+            "name": "برنج و غلات"
+        },
+        {
+            "key": "catalog-2:d2894aaf95705605e18c",
+            "parent_key": "catalog-1:03:02",
+            "name": "برنج ایرانی"
+        },
+        {
+            "key": "catalog-2:df70510b05650ac7d8e8",
+            "parent_key": "catalog-1:03:02",
+            "name": "برنج خارجی"
+        },
+        {
+            "key": "catalog-2:f41a7b7d368cee86cbc5",
+            "parent_key": "catalog-1:03:02",
+            "name": "گندم"
+        },
+        {
+            "key": "catalog-2:ef386f1d336c968c18ed",
+            "parent_key": "catalog-1:03:02",
+            "name": "جو"
+        },
+        {
+            "key": "catalog-2:159622365be48d2c0491",
+            "parent_key": "catalog-1:03:02",
+            "name": "ذرت"
+        },
+        {
+            "key": "catalog-2:94db19a18f6997ae8783",
+            "parent_key": "catalog-1:03:02",
+            "name": "جو دوسر"
+        },
+        {
+            "key": "catalog-1:03:03",
+            "parent_key": "catalog-1:03",
+            "name": "حبوبات"
+        },
+        {
+            "key": "catalog-2:d641d15241235b1dfdf9",
+            "parent_key": "catalog-1:03:03",
+            "name": "لوبیا"
+        },
+        {
+            "key": "catalog-2:b42819fde343cfc1ef14",
+            "parent_key": "catalog-1:03:03",
+            "name": "نخود"
+        },
+        {
+            "key": "catalog-2:a1be3b7972e435e8939e",
+            "parent_key": "catalog-1:03:03",
+            "name": "عدس"
+        },
+        {
+            "key": "catalog-2:cb68e9433cbcc9c21280",
+            "parent_key": "catalog-1:03:03",
+            "name": "ماش"
+        },
+        {
+            "key": "catalog-2:bf0bec210d60a9d500df",
+            "parent_key": "catalog-1:03:03",
+            "name": "لپه"
+        },
+        {
+            "key": "catalog-1:03:04",
+            "parent_key": "catalog-1:03",
+            "name": "خشکبار و آجیل"
+        },
+        {
+            "key": "catalog-1:03:04:01",
+            "parent_key": "catalog-1:03:04",
+            "name": "پسته"
+        },
+        {
+            "key": "catalog-1:03:04:02",
+            "parent_key": "catalog-1:03:04",
+            "name": "بادام"
+        },
+        {
+            "key": "catalog-1:03:04:03",
+            "parent_key": "catalog-1:03:04",
+            "name": "گردو"
+        },
+        {
+            "key": "catalog-1:03:04:04",
+            "parent_key": "catalog-1:03:04",
+            "name": "فندق"
+        },
+        {
+            "key": "catalog-1:03:04:05",
+            "parent_key": "catalog-1:03:04",
+            "name": "بادام‌هندی"
+        },
+        {
+            "key": "catalog-1:03:05",
+            "parent_key": "catalog-1:03",
+            "name": "میوه خشک"
+        },
+        {
+            "key": "catalog-1:03:05:01",
+            "parent_key": "catalog-1:03:05",
+            "name": "خرما"
+        },
+        {
+            "key": "catalog-1:03:05:02",
+            "parent_key": "catalog-1:03:05",
+            "name": "کشمش"
+        },
+        {
+            "key": "catalog-1:03:05:03",
+            "parent_key": "catalog-1:03:05",
+            "name": "انجیر خشک"
+        },
+        {
+            "key": "catalog-1:03:05:04",
+            "parent_key": "catalog-1:03:05",
+            "name": "برگه و میوه خشک مخلوط"
+        },
+        {
+            "key": "catalog-1:03:06",
+            "parent_key": "catalog-1:03",
+            "name": "گوشت و فرآورده‌های پروتئینی"
+        },
+        {
+            "key": "catalog-1:03:07",
+            "parent_key": "catalog-1:03",
+            "name": "لبنیات"
+        },
+        {
+            "key": "catalog-1:03:08",
+            "parent_key": "catalog-1:03",
+            "name": "روغن"
+        },
+        {
+            "key": "catalog-1:03:09",
+            "parent_key": "catalog-1:03",
+            "name": "ادویه و چاشنی"
+        },
+        {
+            "key": "catalog-1:03:09:01",
+            "parent_key": "catalog-1:03:09",
+            "name": "زعفران"
+        },
+        {
+            "key": "catalog-1:03:09:02",
+            "parent_key": "catalog-1:03:09",
+            "name": "ادویه"
+        },
+        {
+            "key": "catalog-1:03:09:03",
+            "parent_key": "catalog-1:03:09",
+            "name": "رب و سس"
+        },
+        {
+            "key": "catalog-1:03:09:04",
+            "parent_key": "catalog-1:03:09",
+            "name": "ترشی و شور"
+        },
+        {
+            "key": "catalog-1:03:10",
+            "parent_key": "catalog-1:03",
+            "name": "شیرینی و تنقلات"
+        },
+        {
+            "key": "catalog-1:03:11",
+            "parent_key": "catalog-1:03",
+            "name": "نوشیدنی"
+        },
+        {
+            "key": "catalog-1:03:11:01",
+            "parent_key": "catalog-1:03:11",
+            "name": "چای"
+        },
+        {
+            "key": "catalog-1:03:11:02",
+            "parent_key": "catalog-1:03:11",
+            "name": "قهوه"
+        },
+        {
+            "key": "catalog-1:03:11:03",
+            "parent_key": "catalog-1:03:11",
+            "name": "دمنوش"
+        },
+        {
+            "key": "catalog-1:03:11:04",
+            "parent_key": "catalog-1:03:11",
+            "name": "آبمیوه"
+        },
+        {
+            "key": "catalog-1:03:11:05",
+            "parent_key": "catalog-1:03:11",
+            "name": "آب و نوشیدنی بسته‌بندی"
+        },
+        {
+            "key": "catalog-1:03:12",
+            "parent_key": "catalog-1:03",
+            "name": "کنسرو و غذای آماده"
+        },
+        {
+            "key": "catalog-1:04",
+            "parent_key": null,
+            "name": "نساجی، پوشاک و چرم"
+        },
+        {
+            "key": "catalog-1:04:01",
+            "parent_key": "catalog-1:04",
+            "name": "الیاف و نخ"
+        },
+        {
+            "key": "catalog-1:04:02",
+            "parent_key": "catalog-1:04",
+            "name": "پارچه"
+        },
+        {
+            "key": "catalog-2:80802c43f198d4f29114",
+            "parent_key": "catalog-1:04:02",
+            "name": "پارچه نخی"
+        },
+        {
+            "key": "catalog-2:8ca410a5fd6a714e5739",
+            "parent_key": "catalog-1:04:02",
+            "name": "پارچه پلی‌استر"
+        },
+        {
+            "key": "catalog-2:08324fa3f46e03a8f6bf",
+            "parent_key": "catalog-1:04:02",
+            "name": "پارچه پشمی"
+        },
+        {
+            "key": "catalog-2:e6c7bd7341eff985692a",
+            "parent_key": "catalog-1:04:02",
+            "name": "پارچه جین"
+        },
+        {
+            "key": "catalog-2:af1df98827c6ba634512",
+            "parent_key": "catalog-1:04:02",
+            "name": "پارچه تریکو"
+        },
+        {
+            "key": "catalog-1:04:03",
+            "parent_key": "catalog-1:04",
+            "name": "پوشاک"
+        },
+        {
+            "key": "catalog-1:04:03:01",
+            "parent_key": "catalog-1:04:03",
+            "name": "زنانه"
+        },
+        {
+            "key": "catalog-1:04:03:02",
+            "parent_key": "catalog-1:04:03",
+            "name": "مردانه"
+        },
+        {
+            "key": "catalog-1:04:03:03",
+            "parent_key": "catalog-1:04:03",
+            "name": "بچگانه"
+        },
+        {
+            "key": "catalog-1:04:03:04",
+            "parent_key": "catalog-1:04:03",
+            "name": "لباس کار"
+        },
+        {
+            "key": "catalog-1:04:04",
+            "parent_key": "catalog-1:04",
+            "name": "کفش"
+        },
+        {
+            "key": "catalog-2:431620dcdfc85ee82900",
+            "parent_key": "catalog-1:04:04",
+            "name": "کفش زنانه"
+        },
+        {
+            "key": "catalog-2:48198d4765f92e25dd63",
+            "parent_key": "catalog-1:04:04",
+            "name": "کفش مردانه"
+        },
+        {
+            "key": "catalog-2:7d23b576344e53d7b5ea",
+            "parent_key": "catalog-1:04:04",
+            "name": "کفش بچگانه"
+        },
+        {
+            "key": "catalog-2:f5e1df1a0ba26ca55264",
+            "parent_key": "catalog-1:04:04",
+            "name": "کفش ورزشی"
+        },
+        {
+            "key": "catalog-2:ac312b888ff2cb5ffef3",
+            "parent_key": "catalog-1:04:04",
+            "name": "کفش ایمنی"
+        },
+        {
+            "key": "catalog-1:04:05",
+            "parent_key": "catalog-1:04",
+            "name": "کیف"
+        },
+        {
+            "key": "catalog-1:04:06",
+            "parent_key": "catalog-1:04",
+            "name": "چرم"
+        },
+        {
+            "key": "catalog-1:04:07",
+            "parent_key": "catalog-1:04",
+            "name": "منسوجات خانگی"
+        },
+        {
+            "key": "catalog-1:04:08",
+            "parent_key": "catalog-1:04",
+            "name": "ملزومات دوخت"
+        },
+        {
+            "key": "catalog-1:05",
+            "parent_key": null,
+            "name": "خانه، آشپزخانه و مبلمان"
+        },
+        {
+            "key": "catalog-1:05:01",
+            "parent_key": "catalog-1:05",
+            "name": "لوازم خانگی"
+        },
+        {
+            "key": "catalog-2:32f28a082d2b258c4a03",
+            "parent_key": "catalog-1:05:01",
+            "name": "یخچال و فریزر"
+        },
+        {
+            "key": "catalog-2:30e02d9c4a8d4ee481b9",
+            "parent_key": "catalog-1:05:01",
+            "name": "ماشین لباسشویی"
+        },
+        {
+            "key": "catalog-2:01187f99c3cd59f8bf07",
+            "parent_key": "catalog-1:05:01",
+            "name": "ماشین ظرفشویی"
+        },
+        {
+            "key": "catalog-2:26e8322f41edee0b01d2",
+            "parent_key": "catalog-1:05:01",
+            "name": "اجاق گاز و فر"
+        },
+        {
+            "key": "catalog-2:211d1b716f13814cd76e",
+            "parent_key": "catalog-1:05:01",
+            "name": "جاروبرقی"
+        },
+        {
+            "key": "catalog-1:05:02",
+            "parent_key": "catalog-1:05",
+            "name": "ظروف و ابزار آشپزخانه"
+        },
+        {
+            "key": "catalog-1:05:03",
+            "parent_key": "catalog-1:05",
+            "name": "مبلمان"
+        },
+        {
+            "key": "catalog-2:ce91c6a01904bdf833bb",
+            "parent_key": "catalog-1:05:03",
+            "name": "مبل راحتی"
+        },
+        {
+            "key": "catalog-2:9b7fe6dd1dfd2f83664d",
+            "parent_key": "catalog-1:05:03",
+            "name": "مبل کلاسیک"
+        },
+        {
+            "key": "catalog-2:5a6eb22059d20bb09cc1",
+            "parent_key": "catalog-1:05:03",
+            "name": "میز و صندلی"
+        },
+        {
+            "key": "catalog-2:e458013d0f398f22575a",
+            "parent_key": "catalog-1:05:03",
+            "name": "مبلمان اداری"
+        },
+        {
+            "key": "catalog-2:319fe9101359fcfa86bd",
+            "parent_key": "catalog-1:05:03",
+            "name": "مبلمان فضای باز"
+        },
+        {
+            "key": "catalog-1:05:04",
+            "parent_key": "catalog-1:05",
+            "name": "کالای خواب"
+        },
+        {
+            "key": "catalog-1:05:05",
+            "parent_key": "catalog-1:05",
+            "name": "فرش و کف‌پوش"
+        },
+        {
+            "key": "catalog-1:05:06",
+            "parent_key": "catalog-1:05",
+            "name": "دکوراسیون"
+        },
+        {
+            "key": "catalog-1:05:07",
+            "parent_key": "catalog-1:05",
+            "name": "روشنایی خانگی"
+        },
+        {
+            "key": "catalog-1:06",
+            "parent_key": null,
+            "name": "ساختمان، عمران و تأسیسات"
+        },
+        {
+            "key": "catalog-1:06:01",
+            "parent_key": "catalog-1:06",
+            "name": "سیمان و بتن"
+        },
+        {
+            "key": "catalog-1:06:02",
+            "parent_key": "catalog-1:06",
+            "name": "آجر و بلوک"
+        },
+        {
+            "key": "catalog-1:06:03",
+            "parent_key": "catalog-1:06",
+            "name": "سنگ ساختمانی"
+        },
+        {
+            "key": "catalog-1:06:03:01",
+            "parent_key": "catalog-1:06:03",
+            "name": "مرمریت"
+        },
+        {
+            "key": "catalog-1:06:03:02",
+            "parent_key": "catalog-1:06:03",
+            "name": "تراورتن"
+        },
+        {
+            "key": "catalog-1:06:03:03",
+            "parent_key": "catalog-1:06:03",
+            "name": "گرانیت"
+        },
+        {
+            "key": "catalog-1:06:03:04",
+            "parent_key": "catalog-1:06:03",
+            "name": "مرمر"
+        },
+        {
+            "key": "catalog-1:06:04",
+            "parent_key": "catalog-1:06",
+            "name": "کاشی و سرامیک"
+        },
+        {
+            "key": "catalog-1:06:05",
+            "parent_key": "catalog-1:06",
+            "name": "در و پنجره"
+        },
+        {
+            "key": "catalog-1:06:06",
+            "parent_key": "catalog-1:06",
+            "name": "لوله و اتصالات"
+        },
+        {
+            "key": "catalog-2:be86f7707caf4670b65b",
+            "parent_key": "catalog-1:06:06",
+            "name": "لوله و اتصالات پلی‌اتیلن"
+        },
+        {
+            "key": "catalog-2:3057573a5617f43d28ad",
+            "parent_key": "catalog-1:06:06",
+            "name": "لوله و اتصالات پی‌وی‌سی"
+        },
+        {
+            "key": "catalog-2:d4a4a667819f77461776",
+            "parent_key": "catalog-1:06:06",
+            "name": "لوله و اتصالات پلی‌پروپیلن"
+        },
+        {
+            "key": "catalog-2:609c60d756f8794faa46",
+            "parent_key": "catalog-1:06:06",
+            "name": "لوله و اتصالات فولادی"
+        },
+        {
+            "key": "catalog-2:9e1829c7ed401f4b723a",
+            "parent_key": "catalog-1:06:06",
+            "name": "لوله و اتصالات مسی"
+        },
+        {
+            "key": "catalog-1:06:07",
+            "parent_key": "catalog-1:06",
+            "name": "شیرآلات"
+        },
+        {
+            "key": "catalog-1:06:08",
+            "parent_key": "catalog-1:06",
+            "name": "گرمایش و سرمایش"
+        },
+        {
+            "key": "catalog-2:6658dc7d8cb7af2036de",
+            "parent_key": "catalog-1:06:08",
+            "name": "کولر آبی"
+        },
+        {
+            "key": "catalog-2:1b415d2219a54131c0fd",
+            "parent_key": "catalog-1:06:08",
+            "name": "کولر گازی"
+        },
+        {
+            "key": "catalog-2:b3da0a1935e98e812ca6",
+            "parent_key": "catalog-1:06:08",
+            "name": "پکیج"
+        },
+        {
+            "key": "catalog-2:49fc079c7db348c08f98",
+            "parent_key": "catalog-1:06:08",
+            "name": "رادیاتور"
+        },
+        {
+            "key": "catalog-2:ff706cf57b813cf944cd",
+            "parent_key": "catalog-1:06:08",
+            "name": "چیلر"
+        },
+        {
+            "key": "catalog-1:06:09",
+            "parent_key": "catalog-1:06",
+            "name": "عایق"
+        },
+        {
+            "key": "catalog-1:06:10",
+            "parent_key": "catalog-1:06",
+            "name": "خدمات ساختمانی"
+        },
+        {
+            "key": "catalog-1:07",
+            "parent_key": null,
+            "name": "معدن، فلزات و مواد معدنی"
+        },
+        {
+            "key": "catalog-1:07:01",
+            "parent_key": "catalog-1:07",
+            "name": "مواد معدنی"
+        },
+        {
+            "key": "catalog-2:4c199748549526cc1a3f",
+            "parent_key": "catalog-1:07:01",
+            "name": "سنگ آهن"
+        },
+        {
+            "key": "catalog-2:4eb7768de3b761ebb128",
+            "parent_key": "catalog-1:07:01",
+            "name": "سنگ مس"
+        },
+        {
+            "key": "catalog-2:fdb49dcda968349dbc8b",
+            "parent_key": "catalog-1:07:01",
+            "name": "بوکسیت"
+        },
+        {
+            "key": "catalog-2:108c90979845624678ba",
+            "parent_key": "catalog-1:07:01",
+            "name": "سیلیس"
+        },
+        {
+            "key": "catalog-2:870ee6a135581d475b2b",
+            "parent_key": "catalog-1:07:01",
+            "name": "بنتونیت"
+        },
+        {
+            "key": "catalog-1:07:02",
+            "parent_key": "catalog-1:07",
+            "name": "فولاد و آهن"
+        },
+        {
+            "key": "catalog-2:a22d74c50de4f292d6ac",
+            "parent_key": "catalog-1:07:02",
+            "name": "چدن"
+        },
+        {
+            "key": "catalog-2:2ea20d92b39a700af1b6",
+            "parent_key": "catalog-1:07:02",
+            "name": "فولاد آلیاژی"
+        },
+        {
+            "key": "catalog-2:8da6fac72dbf4972b8f3",
+            "parent_key": "catalog-1:07:02",
+            "name": "آهن اسفنجی"
+        },
+        {
+            "key": "catalog-2:1253972c89ac74fa4f17",
+            "parent_key": "catalog-1:07:02",
+            "name": "شمش فولاد"
+        },
+        {
+            "key": "catalog-2:5d74ba916afa6a98c158",
+            "parent_key": "catalog-1:07:02",
+            "name": "آهن خام"
+        },
+        {
+            "key": "catalog-1:07:03",
+            "parent_key": "catalog-1:07",
+            "name": "فلزات غیرآهنی"
+        },
+        {
+            "key": "catalog-1:07:03:01",
+            "parent_key": "catalog-1:07:03",
+            "name": "مس"
+        },
+        {
+            "key": "catalog-1:07:03:02",
+            "parent_key": "catalog-1:07:03",
+            "name": "آلومینیوم"
+        },
+        {
+            "key": "catalog-1:07:03:03",
+            "parent_key": "catalog-1:07:03",
+            "name": "روی"
+        },
+        {
+            "key": "catalog-1:07:03:04",
+            "parent_key": "catalog-1:07:03",
+            "name": "سرب"
+        },
+        {
+            "key": "catalog-1:07:04",
+            "parent_key": "catalog-1:07",
+            "name": "مقاطع و ورق"
+        },
+        {
+            "key": "catalog-1:07:05",
+            "parent_key": "catalog-1:07",
+            "name": "ریخته‌گری"
+        },
+        {
+            "key": "catalog-1:07:06",
+            "parent_key": "catalog-1:07",
+            "name": "فرآوری معدن"
+        },
+        {
+            "key": "catalog-1:07:07",
+            "parent_key": "catalog-1:07",
+            "name": "مصنوعات فلزی"
+        },
+        {
+            "key": "catalog-1:08",
+            "parent_key": null,
+            "name": "نفت، گاز و مواد شیمیایی"
+        },
+        {
+            "key": "catalog-1:08:01",
+            "parent_key": "catalog-1:08",
+            "name": "فرآورده‌های نفتی"
+        },
+        {
+            "key": "catalog-2:1e1996085f367f88fcf9",
+            "parent_key": "catalog-1:08:01",
+            "name": "قیر"
+        },
+        {
+            "key": "catalog-2:31e1d0e65dc506cbad46",
+            "parent_key": "catalog-1:08:01",
+            "name": "گازوئیل"
+        },
+        {
+            "key": "catalog-2:08f4fd378967c06f176c",
+            "parent_key": "catalog-1:08:01",
+            "name": "نفتا"
+        },
+        {
+            "key": "catalog-2:05c999c54d01577f50c6",
+            "parent_key": "catalog-1:08:01",
+            "name": "مازوت"
+        },
+        {
+            "key": "catalog-2:3edb41261fe19162215b",
+            "parent_key": "catalog-1:08:01",
+            "name": "پارافین"
+        },
+        {
+            "key": "catalog-1:08:02",
+            "parent_key": "catalog-1:08",
+            "name": "گاز و تجهیزات"
+        },
+        {
+            "key": "catalog-1:08:03",
+            "parent_key": "catalog-1:08",
+            "name": "روانکار"
+        },
+        {
+            "key": "catalog-2:b81ae40e972bd7e49582",
+            "parent_key": "catalog-1:08:03",
+            "name": "روغن موتور"
+        },
+        {
+            "key": "catalog-2:de16b225405e6c43236a",
+            "parent_key": "catalog-1:08:03",
+            "name": "روغن صنعتی"
+        },
+        {
+            "key": "catalog-2:9921287c0846528ecc27",
+            "parent_key": "catalog-1:08:03",
+            "name": "روغن دنده"
+        },
+        {
+            "key": "catalog-2:9f198b2cf2f16e7625f2",
+            "parent_key": "catalog-1:08:03",
+            "name": "روغن هیدرولیک"
+        },
+        {
+            "key": "catalog-2:9dc1bb8587e7866f7b03",
+            "parent_key": "catalog-1:08:03",
+            "name": "گریس"
+        },
+        {
+            "key": "catalog-1:08:04",
+            "parent_key": "catalog-1:08",
+            "name": "مواد شیمیایی پایه"
+        },
+        {
+            "key": "catalog-1:08:05",
+            "parent_key": "catalog-1:08",
+            "name": "مواد شیمیایی تخصصی"
+        },
+        {
+            "key": "catalog-1:08:06",
+            "parent_key": "catalog-1:08",
+            "name": "رنگ و رزین"
+        },
+        {
+            "key": "catalog-1:08:07",
+            "parent_key": "catalog-1:08",
+            "name": "چسب و درزگیر"
+        },
+        {
+            "key": "catalog-1:09",
+            "parent_key": null,
+            "name": "پلیمر، پلاستیک و لاستیک"
+        },
+        {
+            "key": "catalog-1:09:01",
+            "parent_key": "catalog-1:09",
+            "name": "مواد اولیه پلیمری"
+        },
+        {
+            "key": "catalog-2:1774cdc5abcfddd7c8c5",
+            "parent_key": "catalog-1:09:01",
+            "name": "پلی‌اتیلن"
+        },
+        {
+            "key": "catalog-2:ae4c29eea546289f0f76",
+            "parent_key": "catalog-1:09:01",
+            "name": "پلی‌پروپیلن"
+        },
+        {
+            "key": "catalog-2:f98480168e9070b1b66f",
+            "parent_key": "catalog-1:09:01",
+            "name": "پی‌وی‌سی"
+        },
+        {
+            "key": "catalog-2:664c18efecd8a9901622",
+            "parent_key": "catalog-1:09:01",
+            "name": "پت"
+        },
+        {
+            "key": "catalog-2:4ebb35e354fa10e24193",
+            "parent_key": "catalog-1:09:01",
+            "name": "ای‌بی‌اس"
+        },
+        {
+            "key": "catalog-1:09:02",
+            "parent_key": "catalog-1:09",
+            "name": "گرانول"
+        },
+        {
+            "key": "catalog-1:09:03",
+            "parent_key": "catalog-1:09",
+            "name": "قطعات پلاستیکی"
+        },
+        {
+            "key": "catalog-1:09:04",
+            "parent_key": "catalog-1:09",
+            "name": "فیلم و ورق"
+        },
+        {
+            "key": "catalog-1:09:05",
+            "parent_key": "catalog-1:09",
+            "name": "قطعات لاستیکی"
+        },
+        {
+            "key": "catalog-2:2f720fddeaac7753db89",
+            "parent_key": "catalog-1:09:05",
+            "name": "اورینگ"
+        },
+        {
+            "key": "catalog-2:23967a2529d15a9070a7",
+            "parent_key": "catalog-1:09:05",
+            "name": "کاسه‌نمد"
+        },
+        {
+            "key": "catalog-2:e7ab1f928df26e532f74",
+            "parent_key": "catalog-1:09:05",
+            "name": "تسمه لاستیکی"
+        },
+        {
+            "key": "catalog-2:61c8e53024612eb59965",
+            "parent_key": "catalog-1:09:05",
+            "name": "واشر لاستیکی"
+        },
+        {
+            "key": "catalog-2:042e686b73af45862dbb",
+            "parent_key": "catalog-1:09:05",
+            "name": "شیلنگ لاستیکی"
+        },
+        {
+            "key": "catalog-1:09:06",
+            "parent_key": "catalog-1:09",
+            "name": "افزودنی‌های پلیمری"
+        },
+        {
+            "key": "catalog-1:10",
+            "parent_key": null,
+            "name": "چوب، کاغذ، چاپ و بسته‌بندی"
+        },
+        {
+            "key": "catalog-1:10:01",
+            "parent_key": "catalog-1:10",
+            "name": "چوب و فرآورده‌ها"
+        },
+        {
+            "key": "catalog-2:c733c73a4b6622d5c609",
+            "parent_key": "catalog-1:10:01",
+            "name": "چوب طبیعی"
+        },
+        {
+            "key": "catalog-2:e7c83041e497fc246812",
+            "parent_key": "catalog-1:10:01",
+            "name": "ام‌دی‌اف"
+        },
+        {
+            "key": "catalog-2:e015329887683933483a",
+            "parent_key": "catalog-1:10:01",
+            "name": "نئوپان"
+        },
+        {
+            "key": "catalog-2:cffef3dcd4a581cf13b2",
+            "parent_key": "catalog-1:10:01",
+            "name": "تخته چندلا"
+        },
+        {
+            "key": "catalog-2:bf492c6229713f0082ec",
+            "parent_key": "catalog-1:10:01",
+            "name": "روکش چوب"
+        },
+        {
+            "key": "catalog-1:10:02",
+            "parent_key": "catalog-1:10",
+            "name": "کاغذ و مقوا"
+        },
+        {
+            "key": "catalog-1:10:03",
+            "parent_key": "catalog-1:10",
+            "name": "کارتن"
+        },
+        {
+            "key": "catalog-1:10:04",
+            "parent_key": "catalog-1:10",
+            "name": "ظروف و ملزومات بسته‌بندی"
+        },
+        {
+            "key": "catalog-2:c6430d0b39a017fe7e23",
+            "parent_key": "catalog-1:10:04",
+            "name": "ظروف شیشه‌ای"
+        },
+        {
+            "key": "catalog-2:76c9203c969e4205238e",
+            "parent_key": "catalog-1:10:04",
+            "name": "بطری پلاستیکی"
+        },
+        {
+            "key": "catalog-2:a025195d388735f3bae1",
+            "parent_key": "catalog-1:10:04",
+            "name": "قوطی فلزی"
+        },
+        {
+            "key": "catalog-2:09abbb214e9136fa7399",
+            "parent_key": "catalog-1:10:04",
+            "name": "پاکت بسته‌بندی"
+        },
+        {
+            "key": "catalog-2:74b78bbdb3929775fe1e",
+            "parent_key": "catalog-1:10:04",
+            "name": "ظروف یک‌بارمصرف"
+        },
+        {
+            "key": "catalog-1:10:05",
+            "parent_key": "catalog-1:10",
+            "name": "چاپ"
+        },
+        {
+            "key": "catalog-1:10:06",
+            "parent_key": "catalog-1:10",
+            "name": "برچسب و لیبل"
+        },
+        {
+            "key": "catalog-1:10:07",
+            "parent_key": "catalog-1:10",
+            "name": "تجهیزات چاپ و بسته‌بندی"
+        },
+        {
+            "key": "catalog-1:11",
+            "parent_key": null,
+            "name": "ماشین‌آلات، ابزار و تجهیزات صنعتی"
+        },
+        {
+            "key": "catalog-1:11:01",
+            "parent_key": "catalog-1:11",
+            "name": "ماشین‌آلات تولید"
+        },
+        {
+            "key": "catalog-2:d0c665c4c1ffb0eb2457",
+            "parent_key": "catalog-1:11:01",
+            "name": "خط تولید مواد غذایی"
+        },
+        {
+            "key": "catalog-2:d4c280dfce408e4f9f76",
+            "parent_key": "catalog-1:11:01",
+            "name": "ماشین‌آلات نساجی"
+        },
+        {
+            "key": "catalog-2:71d831e3557cfc0271db",
+            "parent_key": "catalog-1:11:01",
+            "name": "دستگاه تزریق پلاستیک"
+        },
+        {
+            "key": "catalog-2:030118d4c9efc38d5e8e",
+            "parent_key": "catalog-1:11:01",
+            "name": "ماشین سی‌ان‌سی"
+        },
+        {
+            "key": "catalog-2:13885c50a22c1c463ba4",
+            "parent_key": "catalog-1:11:01",
+            "name": "دستگاه تراش"
+        },
+        {
+            "key": "catalog-1:11:02",
+            "parent_key": "catalog-1:11",
+            "name": "ابزار دستی"
+        },
+        {
+            "key": "catalog-1:11:03",
+            "parent_key": "catalog-1:11",
+            "name": "ابزار برقی"
+        },
+        {
+            "key": "catalog-2:696c94b886abd945fcc9",
+            "parent_key": "catalog-1:11:03",
+            "name": "دریل"
+        },
+        {
+            "key": "catalog-2:c9b7ba0ee9378779ac0e",
+            "parent_key": "catalog-1:11:03",
+            "name": "فرز"
+        },
+        {
+            "key": "catalog-2:4241801b963a637218f0",
+            "parent_key": "catalog-1:11:03",
+            "name": "پیچ‌گوشتی برقی"
+        },
+        {
+            "key": "catalog-2:32a531d8e5581ca94640",
+            "parent_key": "catalog-1:11:03",
+            "name": "اره برقی"
+        },
+        {
+            "key": "catalog-2:acdc2f3bcdba3c34031e",
+            "parent_key": "catalog-1:11:03",
+            "name": "بتن‌کن"
+        },
+        {
+            "key": "catalog-1:11:04",
+            "parent_key": "catalog-1:11",
+            "name": "پمپ و کمپرسور"
+        },
+        {
+            "key": "catalog-1:11:05",
+            "parent_key": "catalog-1:11",
+            "name": "انتقال قدرت"
+        },
+        {
+            "key": "catalog-1:11:06",
+            "parent_key": "catalog-1:11",
+            "name": "هیدرولیک و پنوماتیک"
+        },
+        {
+            "key": "catalog-1:11:07",
+            "parent_key": "catalog-1:11",
+            "name": "جوش و برش"
+        },
+        {
+            "key": "catalog-1:11:08",
+            "parent_key": "catalog-1:11",
+            "name": "ایمنی صنعتی"
+        },
+        {
+            "key": "catalog-1:11:09",
+            "parent_key": "catalog-1:11",
+            "name": "تجهیزات اندازه‌گیری"
+        },
+        {
+            "key": "catalog-1:12",
+            "parent_key": null,
+            "name": "برق، الکترونیک و انرژی"
+        },
+        {
+            "key": "catalog-1:12:01",
+            "parent_key": "catalog-1:12",
+            "name": "سیم و کابل"
+        },
+        {
+            "key": "catalog-2:d0bdcf18c857e9a285bc",
+            "parent_key": "catalog-1:12:01",
+            "name": "سیم ساختمانی"
+        },
+        {
+            "key": "catalog-2:8460cf7e3c1f7f757544",
+            "parent_key": "catalog-1:12:01",
+            "name": "کابل قدرت"
+        },
+        {
+            "key": "catalog-2:de495c2a3bf57aa16f8c",
+            "parent_key": "catalog-1:12:01",
+            "name": "کابل کنترل"
+        },
+        {
+            "key": "catalog-2:d85c41c354324b3a537f",
+            "parent_key": "catalog-1:12:01",
+            "name": "کابل شبکه"
+        },
+        {
+            "key": "catalog-2:53e981340caef564cf9f",
+            "parent_key": "catalog-1:12:01",
+            "name": "کابل فیبر نوری"
+        },
+        {
+            "key": "catalog-1:12:02",
+            "parent_key": "catalog-1:12",
+            "name": "تابلو و تجهیزات برق"
+        },
+        {
+            "key": "catalog-1:12:03",
+            "parent_key": "catalog-1:12",
+            "name": "قطعات الکترونیک"
+        },
+        {
+            "key": "catalog-1:12:04",
+            "parent_key": "catalog-1:12",
+            "name": "کنترل و اتوماسیون"
+        },
+        {
+            "key": "catalog-1:12:05",
+            "parent_key": "catalog-1:12",
+            "name": "باتری و ذخیره انرژی"
+        },
+        {
+            "key": "catalog-2:13d374d6d2e53a9a0015",
+            "parent_key": "catalog-1:12:05",
+            "name": "باتری خودرو"
+        },
+        {
+            "key": "catalog-2:ef4765cb7d08387df100",
+            "parent_key": "catalog-1:12:05",
+            "name": "باتری صنعتی"
+        },
+        {
+            "key": "catalog-2:f7fc756a973671d0b219",
+            "parent_key": "catalog-1:12:05",
+            "name": "باتری لیتیومی"
+        },
+        {
+            "key": "catalog-2:d061a80ef40632d776f4",
+            "parent_key": "catalog-1:12:05",
+            "name": "یوپی‌اس"
+        },
+        {
+            "key": "catalog-2:b0b497e2d4b336635775",
+            "parent_key": "catalog-1:12:05",
+            "name": "سامانه ذخیره انرژی"
+        },
+        {
+            "key": "catalog-1:12:06",
+            "parent_key": "catalog-1:12",
+            "name": "انرژی خورشیدی"
+        },
+        {
+            "key": "catalog-1:12:06:01",
+            "parent_key": "catalog-1:12:06",
+            "name": "پنل"
+        },
+        {
+            "key": "catalog-1:12:06:02",
+            "parent_key": "catalog-1:12:06",
+            "name": "اینورتر"
+        },
+        {
+            "key": "catalog-1:12:06:03",
+            "parent_key": "catalog-1:12:06",
+            "name": "سازه و متعلقات"
+        },
+        {
+            "key": "catalog-1:12:07",
+            "parent_key": "catalog-1:12",
+            "name": "مولد و تجهیزات نیروگاهی"
+        },
+        {
+            "key": "catalog-1:13",
+            "parent_key": null,
+            "name": "وسایل نقلیه و قطعات"
+        },
+        {
+            "key": "catalog-1:13:01",
+            "parent_key": "catalog-1:13",
+            "name": "خودرو"
+        },
+        {
+            "key": "catalog-2:afa652ae55bb357a79f1",
+            "parent_key": "catalog-1:13:01",
+            "name": "خودروی سواری"
+        },
+        {
+            "key": "catalog-2:007eb7f559f03f1e891f",
+            "parent_key": "catalog-1:13:01",
+            "name": "وانت"
+        },
+        {
+            "key": "catalog-2:d7e441e37f334fd4c72c",
+            "parent_key": "catalog-1:13:01",
+            "name": "شاسی‌بلند"
+        },
+        {
+            "key": "catalog-2:1f6421b5e013b1a4c6cf",
+            "parent_key": "catalog-1:13:01",
+            "name": "خودروی برقی"
+        },
+        {
+            "key": "catalog-2:6c73c263cb141d8e102a",
+            "parent_key": "catalog-1:13:01",
+            "name": "خودروی تجاری سبک"
+        },
+        {
+            "key": "catalog-1:13:02",
+            "parent_key": "catalog-1:13",
+            "name": "قطعات خودرو"
+        },
+        {
+            "key": "catalog-1:13:02:01",
+            "parent_key": "catalog-1:13:02",
+            "name": "موتور"
+        },
+        {
+            "key": "catalog-1:13:02:02",
+            "parent_key": "catalog-1:13:02",
+            "name": "جلوبندی و تعلیق"
+        },
+        {
+            "key": "catalog-1:13:02:03",
+            "parent_key": "catalog-1:13:02",
+            "name": "برق خودرو"
+        },
+        {
+            "key": "catalog-1:13:02:04",
+            "parent_key": "catalog-1:13:02",
+            "name": "بدنه"
+        },
+        {
+            "key": "catalog-1:13:02:05",
+            "parent_key": "catalog-1:13:02",
+            "name": "ترمز"
+        },
+        {
+            "key": "catalog-1:13:03",
+            "parent_key": "catalog-1:13",
+            "name": "موتورسیکلت و دوچرخه"
+        },
+        {
+            "key": "catalog-1:13:04",
+            "parent_key": "catalog-1:13",
+            "name": "خودرو سنگین"
+        },
+        {
+            "key": "catalog-2:b3c8efcf4c3972ed9f9b",
+            "parent_key": "catalog-1:13:04",
+            "name": "کامیون"
+        },
+        {
+            "key": "catalog-2:e95ebec7dcce505bbd32",
+            "parent_key": "catalog-1:13:04",
+            "name": "کشنده"
+        },
+        {
+            "key": "catalog-2:17852631d7c4ab034eea",
+            "parent_key": "catalog-1:13:04",
+            "name": "اتوبوس"
+        },
+        {
+            "key": "catalog-2:7b86fcaedfbcf53344a7",
+            "parent_key": "catalog-1:13:04",
+            "name": "مینی‌بوس"
+        },
+        {
+            "key": "catalog-2:cd20dca9ffea83d99cb7",
+            "parent_key": "catalog-1:13:04",
+            "name": "تریلر"
+        },
+        {
+            "key": "catalog-1:13:05",
+            "parent_key": "catalog-1:13",
+            "name": "ماشین‌آلات راه‌سازی"
+        },
+        {
+            "key": "catalog-1:13:06",
+            "parent_key": "catalog-1:13",
+            "name": "تجهیزات دریایی"
+        },
+        {
+            "key": "catalog-1:13:07",
+            "parent_key": "catalog-1:13",
+            "name": "تجهیزات ریلی"
+        },
+        {
+            "key": "catalog-1:14",
+            "parent_key": null,
+            "name": "رایانه، ارتباطات و تجهیزات اداری"
+        },
+        {
+            "key": "catalog-1:14:01",
+            "parent_key": "catalog-1:14",
+            "name": "رایانه و قطعات"
+        },
+        {
+            "key": "catalog-2:df12a0040e6c2a0821af",
+            "parent_key": "catalog-1:14:01",
+            "name": "لپ‌تاپ"
+        },
+        {
+            "key": "catalog-2:c3be84de3ac4251d05d0",
+            "parent_key": "catalog-1:14:01",
+            "name": "رایانه رومیزی"
+        },
+        {
+            "key": "catalog-2:674163acc09c8906d363",
+            "parent_key": "catalog-1:14:01",
+            "name": "پردازنده"
+        },
+        {
+            "key": "catalog-2:772b146b46e3784bae9d",
+            "parent_key": "catalog-1:14:01",
+            "name": "حافظه و ذخیره‌ساز"
+        },
+        {
+            "key": "catalog-2:dcc03d968e393ac7da63",
+            "parent_key": "catalog-1:14:01",
+            "name": "نمایشگر"
+        },
+        {
+            "key": "catalog-1:14:02",
+            "parent_key": "catalog-1:14",
+            "name": "موبایل و لوازم جانبی"
+        },
+        {
+            "key": "catalog-2:9f902c3863461573d0a3",
+            "parent_key": "catalog-1:14:02",
+            "name": "گوشی موبایل"
+        },
+        {
+            "key": "catalog-2:15029e5518cbfafb2094",
+            "parent_key": "catalog-1:14:02",
+            "name": "تبلت"
+        },
+        {
+            "key": "catalog-2:b3e674936f0700475ae8",
+            "parent_key": "catalog-1:14:02",
+            "name": "شارژر"
+        },
+        {
+            "key": "catalog-2:be2b56371de5cdb35f56",
+            "parent_key": "catalog-1:14:02",
+            "name": "قاب و محافظ"
+        },
+        {
+            "key": "catalog-2:b309bfe71eb2eb93c47f",
+            "parent_key": "catalog-1:14:02",
+            "name": "هندزفری"
+        },
+        {
+            "key": "catalog-1:14:03",
+            "parent_key": "catalog-1:14",
+            "name": "شبکه و مخابرات"
+        },
+        {
+            "key": "catalog-1:14:04",
+            "parent_key": "catalog-1:14",
+            "name": "تجهیزات نظارتی و امنیتی"
+        },
+        {
+            "key": "catalog-1:14:05",
+            "parent_key": "catalog-1:14",
+            "name": "چاپگر و تجهیزات اداری"
+        },
+        {
+            "key": "catalog-1:14:06",
+            "parent_key": "catalog-1:14",
+            "name": "نوشت‌افزار"
+        },
+        {
+            "key": "catalog-1:15",
+            "parent_key": null,
+            "name": "پزشکی، دارویی و آزمایشگاهی"
+        },
+        {
+            "key": "catalog-1:15:01",
+            "parent_key": "catalog-1:15",
+            "name": "تجهیزات پزشکی"
+        },
+        {
+            "key": "catalog-2:2faa61dcf6b1e93df045",
+            "parent_key": "catalog-1:15:01",
+            "name": "تجهیزات تصویربرداری"
+        },
+        {
+            "key": "catalog-2:e6bb71e4394eb11757b6",
+            "parent_key": "catalog-1:15:01",
+            "name": "تجهیزات اتاق عمل"
+        },
+        {
+            "key": "catalog-2:a01df906e655130fcf51",
+            "parent_key": "catalog-1:15:01",
+            "name": "تجهیزات پایش بیمار"
+        },
+        {
+            "key": "catalog-2:ec013827e20cf3db483a",
+            "parent_key": "catalog-1:15:01",
+            "name": "تجهیزات تنفسی"
+        },
+        {
+            "key": "catalog-2:3a00c0081a2400aa22ad",
+            "parent_key": "catalog-1:15:01",
+            "name": "تجهیزات بیمارستانی"
+        },
+        {
+            "key": "catalog-1:15:02",
+            "parent_key": "catalog-1:15",
+            "name": "تجهیزات دندانپزشکی"
+        },
+        {
+            "key": "catalog-1:15:03",
+            "parent_key": "catalog-1:15",
+            "name": "تجهیزات آزمایشگاهی"
+        },
+        {
+            "key": "catalog-2:9cf836480389c1741aa9",
+            "parent_key": "catalog-1:15:03",
+            "name": "سانتریفیوژ"
+        },
+        {
+            "key": "catalog-2:22e407436d11cc7f15a8",
+            "parent_key": "catalog-1:15:03",
+            "name": "میکروسکوپ"
+        },
+        {
+            "key": "catalog-2:55e05f32408dbca2227e",
+            "parent_key": "catalog-1:15:03",
+            "name": "اسپکتروفتومتر"
+        },
+        {
+            "key": "catalog-2:8acb8f387c9f443d53bf",
+            "parent_key": "catalog-1:15:03",
+            "name": "انکوباتور"
+        },
+        {
+            "key": "catalog-2:73f50730a008f449b610",
+            "parent_key": "catalog-1:15:03",
+            "name": "اتوکلاو"
+        },
+        {
+            "key": "catalog-1:15:04",
+            "parent_key": "catalog-1:15",
+            "name": "مواد مصرفی پزشکی"
+        },
+        {
+            "key": "catalog-1:15:04:01",
+            "parent_key": "catalog-1:15:04",
+            "name": "پانسمان"
+        },
+        {
+            "key": "catalog-1:15:04:02",
+            "parent_key": "catalog-1:15:04",
+            "name": "دستکش"
+        },
+        {
+            "key": "catalog-1:15:04:03",
+            "parent_key": "catalog-1:15:04",
+            "name": "سرنگ و تزریق"
+        },
+        {
+            "key": "catalog-1:15:04:04",
+            "parent_key": "catalog-1:15:04",
+            "name": "اقلام یک‌بارمصرف"
+        },
+        {
+            "key": "catalog-1:15:05",
+            "parent_key": "catalog-1:15",
+            "name": "دارو و مواد اولیه"
+        },
+        {
+            "key": "catalog-1:15:06",
+            "parent_key": "catalog-1:15",
+            "name": "تجهیزات توان‌بخشی"
+        },
+        {
+            "key": "catalog-1:15:07",
+            "parent_key": "catalog-1:15",
+            "name": "خدمات سلامت"
+        },
+        {
+            "key": "catalog-1:16",
+            "parent_key": null,
+            "name": "آرایشی، بهداشتی و شوینده"
+        },
+        {
+            "key": "catalog-1:16:01",
+            "parent_key": "catalog-1:16",
+            "name": "مراقبت پوست"
+        },
+        {
+            "key": "catalog-2:f915cda4b73cad57329a",
+            "parent_key": "catalog-1:16:01",
+            "name": "مرطوب‌کننده"
+        },
+        {
+            "key": "catalog-2:b36b3e177aabf661d8b8",
+            "parent_key": "catalog-1:16:01",
+            "name": "ضدآفتاب"
+        },
+        {
+            "key": "catalog-2:cf8ae76878e7117f4c19",
+            "parent_key": "catalog-1:16:01",
+            "name": "پاک‌کننده صورت"
+        },
+        {
+            "key": "catalog-2:17a5b042f66f2e72dd26",
+            "parent_key": "catalog-1:16:01",
+            "name": "سرم پوستی"
+        },
+        {
+            "key": "catalog-2:d92496fd43bd3c253a9a",
+            "parent_key": "catalog-1:16:01",
+            "name": "ماسک صورت"
+        },
+        {
+            "key": "catalog-1:16:02",
+            "parent_key": "catalog-1:16",
+            "name": "مراقبت مو"
+        },
+        {
+            "key": "catalog-1:16:03",
+            "parent_key": "catalog-1:16",
+            "name": "لوازم آرایش"
+        },
+        {
+            "key": "catalog-1:16:04",
+            "parent_key": "catalog-1:16",
+            "name": "عطر"
+        },
+        {
+            "key": "catalog-1:16:05",
+            "parent_key": "catalog-1:16",
+            "name": "بهداشت فردی"
+        },
+        {
+            "key": "catalog-1:16:06",
+            "parent_key": "catalog-1:16",
+            "name": "شوینده خانگی"
+        },
+        {
+            "key": "catalog-2:8cddfe0516ce54e3b923",
+            "parent_key": "catalog-1:16:06",
+            "name": "مایع لباسشویی"
+        },
+        {
+            "key": "catalog-2:9f3a9d5715d1f1a19b20",
+            "parent_key": "catalog-1:16:06",
+            "name": "پودر لباسشویی"
+        },
+        {
+            "key": "catalog-2:6ad5f137b440c91c9b4e",
+            "parent_key": "catalog-1:16:06",
+            "name": "مایع ظرفشویی"
+        },
+        {
+            "key": "catalog-2:bce7046faa38e49c792e",
+            "parent_key": "catalog-1:16:06",
+            "name": "پاک‌کننده سطوح"
+        },
+        {
+            "key": "catalog-2:ae5a3a4ed394da95573d",
+            "parent_key": "catalog-1:16:06",
+            "name": "سفیدکننده"
+        },
+        {
+            "key": "catalog-1:16:07",
+            "parent_key": "catalog-1:16",
+            "name": "شوینده صنعتی"
+        },
+        {
+            "key": "catalog-1:17",
+            "parent_key": null,
+            "name": "کودک، اسباب‌بازی و ورزش"
+        },
+        {
+            "key": "catalog-1:17:01",
+            "parent_key": "catalog-1:17",
+            "name": "سیسمونی"
+        },
+        {
+            "key": "catalog-1:17:02",
+            "parent_key": "catalog-1:17",
+            "name": "اسباب‌بازی"
+        },
+        {
+            "key": "catalog-2:5588dc13147b7cb3f9a2",
+            "parent_key": "catalog-1:17:02",
+            "name": "عروسک"
+        },
+        {
+            "key": "catalog-2:cca2b85cc0d06eb5490c",
+            "parent_key": "catalog-1:17:02",
+            "name": "ماشین اسباب‌بازی"
+        },
+        {
+            "key": "catalog-2:b5b4b08c2ad9751ceb65",
+            "parent_key": "catalog-1:17:02",
+            "name": "اسباب‌بازی ساختنی"
+        },
+        {
+            "key": "catalog-2:6f615562e27356d62bfc",
+            "parent_key": "catalog-1:17:02",
+            "name": "اسباب‌بازی آموزشی"
+        },
+        {
+            "key": "catalog-2:d325cb3bd41a90b7112c",
+            "parent_key": "catalog-1:17:02",
+            "name": "اسباب‌بازی نوزاد"
+        },
+        {
+            "key": "catalog-1:17:03",
+            "parent_key": "catalog-1:17",
+            "name": "بازی و سرگرمی"
+        },
+        {
+            "key": "catalog-1:17:04",
+            "parent_key": "catalog-1:17",
+            "name": "تجهیزات ورزشی"
+        },
+        {
+            "key": "catalog-2:ffdf38e4e8f1fa8609f8",
+            "parent_key": "catalog-1:17:04",
+            "name": "تجهیزات بدنسازی"
+        },
+        {
+            "key": "catalog-2:934be4b7bae58504f967",
+            "parent_key": "catalog-1:17:04",
+            "name": "تجهیزات ورزش‌های توپی"
+        },
+        {
+            "key": "catalog-2:32db274a3f3bc0e0db25",
+            "parent_key": "catalog-1:17:04",
+            "name": "پوشاک ورزشی"
+        },
+        {
+            "key": "catalog-2:42168b5fdc812317a2fe",
+            "parent_key": "catalog-1:17:04",
+            "name": "کفش ورزشی"
+        },
+        {
+            "key": "catalog-2:ccaed5d4adcf123d74a0",
+            "parent_key": "catalog-1:17:04",
+            "name": "تجهیزات ورزش‌های آبی"
+        },
+        {
+            "key": "catalog-1:17:05",
+            "parent_key": "catalog-1:17",
+            "name": "کوهنوردی و کمپینگ"
+        },
+        {
+            "key": "catalog-1:17:06",
+            "parent_key": "catalog-1:17",
+            "name": "تجهیزات تفریحی"
+        },
+        {
+            "key": "catalog-1:18",
+            "parent_key": null,
+            "name": "طلا، زیورآلات، صنایع‌دستی و هدیه"
+        },
+        {
+            "key": "catalog-1:18:01",
+            "parent_key": "catalog-1:18",
+            "name": "طلا و جواهر"
+        },
+        {
+            "key": "catalog-2:0735ac4c18661eba3a5e",
+            "parent_key": "catalog-1:18:01",
+            "name": "طلای ساخته‌شده"
+        },
+        {
+            "key": "catalog-2:bcc5f8903981f38fbb16",
+            "parent_key": "catalog-1:18:01",
+            "name": "شمش طلا"
+        },
+        {
+            "key": "catalog-2:0c6a6acfa3d91078c0fe",
+            "parent_key": "catalog-1:18:01",
+            "name": "طلای آب‌شده"
+        },
+        {
+            "key": "catalog-2:d8a132668138d9659b74",
+            "parent_key": "catalog-1:18:01",
+            "name": "سنگ قیمتی"
+        },
+        {
+            "key": "catalog-2:a972c3cc9dc16c2c1999",
+            "parent_key": "catalog-1:18:01",
+            "name": "جواهرات"
+        },
+        {
+            "key": "catalog-1:18:02",
+            "parent_key": "catalog-1:18",
+            "name": "نقره"
+        },
+        {
+            "key": "catalog-1:18:03",
+            "parent_key": "catalog-1:18",
+            "name": "زیورآلات"
+        },
+        {
+            "key": "catalog-1:18:04",
+            "parent_key": "catalog-1:18",
+            "name": "ساعت"
+        },
+        {
+            "key": "catalog-1:18:05",
+            "parent_key": "catalog-1:18",
+            "name": "صنایع‌دستی"
+        },
+        {
+            "key": "catalog-2:db8a0be04dd3af433be4",
+            "parent_key": "catalog-1:18:05",
+            "name": "سفال و سرامیک"
+        },
+        {
+            "key": "catalog-2:3e5898eaa4bb29a6655e",
+            "parent_key": "catalog-1:18:05",
+            "name": "میناکاری"
+        },
+        {
+            "key": "catalog-2:a120a42956743b9db316",
+            "parent_key": "catalog-1:18:05",
+            "name": "خاتم‌کاری"
+        },
+        {
+            "key": "catalog-2:e33ee6cd44d2776f766e",
+            "parent_key": "catalog-1:18:05",
+            "name": "مسگری"
+        },
+        {
+            "key": "catalog-2:991217d70e240e287a4d",
+            "parent_key": "catalog-1:18:05",
+            "name": "دست‌بافته"
+        },
+        {
+            "key": "catalog-1:18:06",
+            "parent_key": "catalog-1:18",
+            "name": "آثار هنری"
+        },
+        {
+            "key": "catalog-1:18:07",
+            "parent_key": "catalog-1:18",
+            "name": "هدایا و اقلام تبلیغاتی"
+        },
+        {
+            "key": "catalog-1:19",
+            "parent_key": null,
+            "name": "محیط‌زیست و بازیافت"
+        },
+        {
+            "key": "catalog-1:19:01",
+            "parent_key": "catalog-1:19",
+            "name": "ضایعات فلزی"
+        },
+        {
+            "key": "catalog-2:532f0cf4a15ad3e258a5",
+            "parent_key": "catalog-1:19:01",
+            "name": "ضایعات آهن"
+        },
+        {
+            "key": "catalog-2:2ea75bc20d24a88ee985",
+            "parent_key": "catalog-1:19:01",
+            "name": "ضایعات مس"
+        },
+        {
+            "key": "catalog-2:fef02b6e0a1fe8248f78",
+            "parent_key": "catalog-1:19:01",
+            "name": "ضایعات آلومینیوم"
+        },
+        {
+            "key": "catalog-2:7cd7e6d669d4c071fc98",
+            "parent_key": "catalog-1:19:01",
+            "name": "ضایعات استیل"
+        },
+        {
+            "key": "catalog-2:560ff4607cb33dcad2a4",
+            "parent_key": "catalog-1:19:01",
+            "name": "ضایعات برنج"
+        },
+        {
+            "key": "catalog-1:19:02",
+            "parent_key": "catalog-1:19",
+            "name": "ضایعات پلیمری"
+        },
+        {
+            "key": "catalog-1:19:03",
+            "parent_key": "catalog-1:19",
+            "name": "ضایعات کاغذ"
+        },
+        {
+            "key": "catalog-1:19:04",
+            "parent_key": "catalog-1:19",
+            "name": "بازیافت الکترونیک"
+        },
+        {
+            "key": "catalog-1:19:05",
+            "parent_key": "catalog-1:19",
+            "name": "تصفیه آب و فاضلاب"
+        },
+        {
+            "key": "catalog-2:a751686a69117000dafd",
+            "parent_key": "catalog-1:19:05",
+            "name": "تصفیه آب خانگی"
+        },
+        {
+            "key": "catalog-2:ed6c97962983b5ac0cde",
+            "parent_key": "catalog-1:19:05",
+            "name": "تصفیه آب صنعتی"
+        },
+        {
+            "key": "catalog-2:b6402c129dc021bce9d1",
+            "parent_key": "catalog-1:19:05",
+            "name": "فیلتر و ممبران"
+        },
+        {
+            "key": "catalog-2:b2040a0e70b96ca872fb",
+            "parent_key": "catalog-1:19:05",
+            "name": "پمپ دوزینگ"
+        },
+        {
+            "key": "catalog-2:ab327c096eaf5b7427eb",
+            "parent_key": "catalog-1:19:05",
+            "name": "تصفیه فاضلاب"
+        },
+        {
+            "key": "catalog-1:19:06",
+            "parent_key": "catalog-1:19",
+            "name": "مدیریت پسماند"
+        },
+        {
+            "key": "catalog-1:19:07",
+            "parent_key": "catalog-1:19",
+            "name": "خدمات محیط‌زیست"
+        },
+        {
+            "key": "catalog-1:20",
+            "parent_key": null,
+            "name": "حمل‌ونقل، انبارداری و خدمات تجاری"
+        },
+        {
+            "key": "catalog-1:20:01",
+            "parent_key": "catalog-1:20",
+            "name": "حمل زمینی"
+        },
+        {
+            "key": "catalog-1:20:01:01",
+            "parent_key": "catalog-1:20:01",
+            "name": "داخلی"
+        },
+        {
+            "key": "catalog-1:20:01:02",
+            "parent_key": "catalog-1:20:01",
+            "name": "بین‌المللی"
+        },
+        {
+            "key": "catalog-1:20:02",
+            "parent_key": "catalog-1:20",
+            "name": "حمل دریایی"
+        },
+        {
+            "key": "catalog-2:9e79cf79a85113e8b312",
+            "parent_key": "catalog-1:20:02",
+            "name": "حمل کانتینری"
+        },
+        {
+            "key": "catalog-2:8568bd004ac62f61ff15",
+            "parent_key": "catalog-1:20:02",
+            "name": "حمل فله"
+        },
+        {
+            "key": "catalog-2:24898663254889650d01",
+            "parent_key": "catalog-1:20:02",
+            "name": "خرده‌بار دریایی"
+        },
+        {
+            "key": "catalog-2:7cded214f3b03310f056",
+            "parent_key": "catalog-1:20:02",
+            "name": "چارتر شناور"
+        },
+        {
+            "key": "catalog-2:1f9b18ed93af67fcff4f",
+            "parent_key": "catalog-1:20:02",
+            "name": "خدمات بندری"
+        },
+        {
+            "key": "catalog-1:20:03",
+            "parent_key": "catalog-1:20",
+            "name": "حمل هوایی"
+        },
+        {
+            "key": "catalog-1:20:04",
+            "parent_key": "catalog-1:20",
+            "name": "پست و ارسال"
+        },
+        {
+            "key": "catalog-1:20:05",
+            "parent_key": "catalog-1:20",
+            "name": "انبارداری"
+        },
+        {
+            "key": "catalog-2:2bf5fc5bc8b508e40666",
+            "parent_key": "catalog-1:20:05",
+            "name": "انبار عمومی"
+        },
+        {
+            "key": "catalog-2:413295ab1457715b4666",
+            "parent_key": "catalog-1:20:05",
+            "name": "انبار سردخانه‌ای"
+        },
+        {
+            "key": "catalog-2:7872a3ab5473c2b6933a",
+            "parent_key": "catalog-1:20:05",
+            "name": "انبار گمرکی"
+        },
+        {
+            "key": "catalog-2:f5613452a0830238c28a",
+            "parent_key": "catalog-1:20:05",
+            "name": "انبار کالای خطرناک"
+        },
+        {
+            "key": "catalog-2:0c989b1706463d100952",
+            "parent_key": "catalog-1:20:05",
+            "name": "مدیریت موجودی"
+        },
+        {
+            "key": "catalog-1:20:06",
+            "parent_key": "catalog-1:20",
+            "name": "زنجیره سرد"
+        },
+        {
+            "key": "catalog-1:20:07",
+            "parent_key": "catalog-1:20",
+            "name": "ترخیص و امور گمرکی"
+        },
+        {
+            "key": "catalog-1:20:08",
+            "parent_key": "catalog-1:20",
+            "name": "بازرسی کالا"
+        },
+        {
+            "key": "catalog-1:20:09",
+            "parent_key": "catalog-1:20",
+            "name": "خدمات تأمین کالا"
+        },
+        {
+            "key": "catalog-1:21",
+            "parent_key": null,
+            "name": "فناوری اطلاعات و خدمات مهندسی"
+        },
+        {
+            "key": "catalog-1:21:01",
+            "parent_key": "catalog-1:21",
+            "name": "توسعه نرم‌افزار"
+        },
+        {
+            "key": "catalog-1:21:01:01",
+            "parent_key": "catalog-1:21:01",
+            "name": "سازمانی"
+        },
+        {
+            "key": "catalog-1:21:01:02",
+            "parent_key": "catalog-1:21:01",
+            "name": "فروشگاهی"
+        },
+        {
+            "key": "catalog-1:21:01:03",
+            "parent_key": "catalog-1:21:01",
+            "name": "موبایل"
+        },
+        {
+            "key": "catalog-1:21:02",
+            "parent_key": "catalog-1:21",
+            "name": "طراحی وب"
+        },
+        {
+            "key": "catalog-2:e9abfbb084b607c7f54e",
+            "parent_key": "catalog-1:21:02",
+            "name": "وب‌سایت شرکتی"
+        },
+        {
+            "key": "catalog-2:40ff9d72f9020b8dad11",
+            "parent_key": "catalog-1:21:02",
+            "name": "فروشگاه اینترنتی"
+        },
+        {
+            "key": "catalog-2:b649dd6508be3bc3a9ad",
+            "parent_key": "catalog-1:21:02",
+            "name": "وب‌سایت آموزشی"
+        },
+        {
+            "key": "catalog-2:c3e925113598ca127c2f",
+            "parent_key": "catalog-1:21:02",
+            "name": "پرتال سازمانی"
+        },
+        {
+            "key": "catalog-2:821b7b6e7a55866326a3",
+            "parent_key": "catalog-1:21:02",
+            "name": "پشتیبانی وب"
+        },
+        {
+            "key": "catalog-1:21:03",
+            "parent_key": "catalog-1:21",
+            "name": "خدمات شبکه"
+        },
+        {
+            "key": "catalog-1:21:04",
+            "parent_key": "catalog-1:21",
+            "name": "امنیت اطلاعات"
+        },
+        {
+            "key": "catalog-1:21:05",
+            "parent_key": "catalog-1:21",
+            "name": "داده و هوش مصنوعی"
+        },
+        {
+            "key": "catalog-1:21:06",
+            "parent_key": "catalog-1:21",
+            "name": "طراحی و مهندسی"
+        },
+        {
+            "key": "catalog-2:54143afddc370256da38",
+            "parent_key": "catalog-1:21:06",
+            "name": "مهندسی مکانیک"
+        },
+        {
+            "key": "catalog-2:088fe0bb0b4dc1a89405",
+            "parent_key": "catalog-1:21:06",
+            "name": "مهندسی برق"
+        },
+        {
+            "key": "catalog-2:c629b08890c7a8afa26d",
+            "parent_key": "catalog-1:21:06",
+            "name": "مهندسی عمران"
+        },
+        {
+            "key": "catalog-2:0fc16447b0739cd1ff3f",
+            "parent_key": "catalog-1:21:06",
+            "name": "معماری"
+        },
+        {
+            "key": "catalog-2:534360de77bf005b1c78",
+            "parent_key": "catalog-1:21:06",
+            "name": "طراحی صنعتی"
+        },
+        {
+            "key": "catalog-1:21:07",
+            "parent_key": "catalog-1:21",
+            "name": "نصب و نگهداری صنعتی"
+        },
+        {
+            "key": "catalog-1:21:08",
+            "parent_key": "catalog-1:21",
+            "name": "تعمیرات صنعتی"
+        },
+        {
+            "key": "catalog-1:22",
+            "parent_key": null,
+            "name": "مالی، حقوقی، بیمه و خدمات کسب‌وکار"
+        },
+        {
+            "key": "catalog-1:22:01",
+            "parent_key": "catalog-1:22",
+            "name": "حسابداری و حسابرسی"
+        },
+        {
+            "key": "catalog-2:bd92aedf7cab1a70c562",
+            "parent_key": "catalog-1:22:01",
+            "name": "حسابداری مالی"
+        },
+        {
+            "key": "catalog-2:dcc5eac7f6e8377e2c78",
+            "parent_key": "catalog-1:22:01",
+            "name": "خدمات مالیاتی"
+        },
+        {
+            "key": "catalog-2:ceaf72e01432123803d8",
+            "parent_key": "catalog-1:22:01",
+            "name": "حقوق و دستمزد"
+        },
+        {
+            "key": "catalog-2:9e144c667d7759f96377",
+            "parent_key": "catalog-1:22:01",
+            "name": "حسابرسی مالی"
+        },
+        {
+            "key": "catalog-2:c38ea658048e8b862383",
+            "parent_key": "catalog-1:22:01",
+            "name": "حسابداری مدیریت"
+        },
+        {
+            "key": "catalog-1:22:02",
+            "parent_key": "catalog-1:22",
+            "name": "خدمات مالی"
+        },
+        {
+            "key": "catalog-1:22:03",
+            "parent_key": "catalog-1:22",
+            "name": "بیمه"
+        },
+        {
+            "key": "catalog-1:22:04",
+            "parent_key": "catalog-1:22",
+            "name": "خدمات حقوقی"
+        },
+        {
+            "key": "catalog-2:cb20fa71f445af45824f",
+            "parent_key": "catalog-1:22:04",
+            "name": "قراردادهای تجاری"
+        },
+        {
+            "key": "catalog-2:fb32a6e213520253c2b6",
+            "parent_key": "catalog-1:22:04",
+            "name": "امور حقوقی شرکت‌ها"
+        },
+        {
+            "key": "catalog-2:aef04398f4de77e12af3",
+            "parent_key": "catalog-1:22:04",
+            "name": "دعاوی تجاری"
+        },
+        {
+            "key": "catalog-2:9d6b7dd86e12923e50bc",
+            "parent_key": "catalog-1:22:04",
+            "name": "مالکیت فکری"
+        },
+        {
+            "key": "catalog-2:876d83c4d74132014b18",
+            "parent_key": "catalog-1:22:04",
+            "name": "داوری"
+        },
+        {
+            "key": "catalog-1:22:05",
+            "parent_key": "catalog-1:22",
+            "name": "ثبت و مجوزها"
+        },
+        {
+            "key": "catalog-1:22:06",
+            "parent_key": "catalog-1:22",
+            "name": "منابع انسانی"
+        },
+        {
+            "key": "catalog-1:22:07",
+            "parent_key": "catalog-1:22",
+            "name": "مشاوره مدیریت"
+        },
+        {
+            "key": "catalog-1:22:08",
+            "parent_key": "catalog-1:22",
+            "name": "ترجمه و خدمات اداری"
+        },
+        {
+            "key": "catalog-1:23",
+            "parent_key": null,
+            "name": "تبلیغات، رسانه، فرهنگ و آموزش"
+        },
+        {
+            "key": "catalog-1:23:01",
+            "parent_key": "catalog-1:23",
+            "name": "تبلیغات و بازاریابی"
+        },
+        {
+            "key": "catalog-2:bd49d3622effc0b62362",
+            "parent_key": "catalog-1:23:01",
+            "name": "تبلیغات دیجیتال"
+        },
+        {
+            "key": "catalog-2:141e52d599305a7464dd",
+            "parent_key": "catalog-1:23:01",
+            "name": "تبلیغات محیطی"
+        },
+        {
+            "key": "catalog-2:1a6eab1eabc9b0d11a19",
+            "parent_key": "catalog-1:23:01",
+            "name": "برندسازی"
+        },
+        {
+            "key": "catalog-2:17c81070ea545f7e9cb3",
+            "parent_key": "catalog-1:23:01",
+            "name": "تحقیقات بازار"
+        },
+        {
+            "key": "catalog-2:f140eaba4e92e9753589",
+            "parent_key": "catalog-1:23:01",
+            "name": "بازاریابی محتوا"
+        },
+        {
+            "key": "catalog-1:23:02",
+            "parent_key": "catalog-1:23",
+            "name": "طراحی گرافیک"
+        },
+        {
+            "key": "catalog-1:23:03",
+            "parent_key": "catalog-1:23",
+            "name": "عکاسی و ویدئو"
+        },
+        {
+            "key": "catalog-1:23:04",
+            "parent_key": "catalog-1:23",
+            "name": "رسانه و تولید محتوا"
+        },
+        {
+            "key": "catalog-1:23:05",
+            "parent_key": "catalog-1:23",
+            "name": "نشر و کتاب"
+        },
+        {
+            "key": "catalog-1:23:06",
+            "parent_key": "catalog-1:23",
+            "name": "آموزش"
+        },
+        {
+            "key": "catalog-2:a9e68d9c05fc19f7018f",
+            "parent_key": "catalog-1:23:06",
+            "name": "آموزش زبان"
+        },
+        {
+            "key": "catalog-2:403960a1ccf07d6fa1e2",
+            "parent_key": "catalog-1:23:06",
+            "name": "آموزش فنی و حرفه‌ای"
+        },
+        {
+            "key": "catalog-2:8e18700326b5fb743bfe",
+            "parent_key": "catalog-1:23:06",
+            "name": "آموزش مدیریت کسب‌وکار"
+        },
+        {
+            "key": "catalog-2:ca3823eed63d1d9d2be4",
+            "parent_key": "catalog-1:23:06",
+            "name": "آموزش مهارت‌های رایانه"
+        },
+        {
+            "key": "catalog-2:cbddae07c77ed01412a7",
+            "parent_key": "catalog-1:23:06",
+            "name": "آموزش آنلاین"
+        },
+        {
+            "key": "catalog-1:23:07",
+            "parent_key": "catalog-1:23",
+            "name": "نمایشگاه و رویداد"
+        },
+        {
+            "key": "catalog-1:24",
+            "parent_key": null,
+            "name": "گردشگری، اقامت و پذیرایی"
+        },
+        {
+            "key": "catalog-1:24:01",
+            "parent_key": "catalog-1:24",
+            "name": "خدمات سفر"
+        },
+        {
+            "key": "catalog-2:35b837cbfaa99fc3c12d",
+            "parent_key": "catalog-1:24:01",
+            "name": "بلیت هواپیما"
+        },
+        {
+            "key": "catalog-2:83d544bfa0f6f8a12b77",
+            "parent_key": "catalog-1:24:01",
+            "name": "بلیت قطار"
+        },
+        {
+            "key": "catalog-2:9db4b3885cebf696ba37",
+            "parent_key": "catalog-1:24:01",
+            "name": "تور داخلی"
+        },
+        {
+            "key": "catalog-2:2096dcc4e8a7a1c0358f",
+            "parent_key": "catalog-1:24:01",
+            "name": "تور خارجی"
+        },
+        {
+            "key": "catalog-2:4d522af90d1ebcda1aab",
+            "parent_key": "catalog-1:24:01",
+            "name": "خدمات ویزا"
+        },
+        {
+            "key": "catalog-1:24:02",
+            "parent_key": "catalog-1:24",
+            "name": "هتل و اقامتگاه"
+        },
+        {
+            "key": "catalog-1:24:03",
+            "parent_key": "catalog-1:24",
+            "name": "رستوران و تهیه غذا"
+        },
+        {
+            "key": "catalog-2:7f78a86e205d3240db71",
+            "parent_key": "catalog-1:24:03",
+            "name": "رستوران"
+        },
+        {
+            "key": "catalog-2:59580ee728d517629dc8",
+            "parent_key": "catalog-1:24:03",
+            "name": "تهیه غذای سازمانی"
+        },
+        {
+            "key": "catalog-2:7bb2de96544b8113e11f",
+            "parent_key": "catalog-1:24:03",
+            "name": "کترینگ مراسم"
+        },
+        {
+            "key": "catalog-2:c412dd980acba20e9762",
+            "parent_key": "catalog-1:24:03",
+            "name": "فست‌فود"
+        },
+        {
+            "key": "catalog-2:79f94f6f1ad03b3bb0dc",
+            "parent_key": "catalog-1:24:03",
+            "name": "آشپزخانه صنعتی"
+        },
+        {
+            "key": "catalog-1:24:04",
+            "parent_key": "catalog-1:24",
+            "name": "کافه"
+        },
+        {
+            "key": "catalog-1:24:05",
+            "parent_key": "catalog-1:24",
+            "name": "خدمات گردشگری"
+        },
+        {
+            "key": "catalog-1:24:06",
+            "parent_key": "catalog-1:24",
+            "name": "تجهیزات هتل و رستوران"
+        },
+        {
+            "key": "catalog-1:25",
+            "parent_key": null,
+            "name": "املاک، خدمات عمومی و شخصی"
+        },
+        {
+            "key": "catalog-1:25:01",
+            "parent_key": "catalog-1:25",
+            "name": "خدمات املاک"
+        },
+        {
+            "key": "catalog-2:02fc02c075ed8f0be312",
+            "parent_key": "catalog-1:25:01",
+            "name": "املاک مسکونی"
+        },
+        {
+            "key": "catalog-2:e91f71152665367063a5",
+            "parent_key": "catalog-1:25:01",
+            "name": "املاک تجاری"
+        },
+        {
+            "key": "catalog-2:a5a23a80572aaa7fb614",
+            "parent_key": "catalog-1:25:01",
+            "name": "املاک صنعتی"
+        },
+        {
+            "key": "catalog-2:d94746f25d90b2afd9f7",
+            "parent_key": "catalog-1:25:01",
+            "name": "زمین و باغ"
+        },
+        {
+            "key": "catalog-2:6cbe777309b98dfcfb67",
+            "parent_key": "catalog-1:25:01",
+            "name": "اجاره املاک"
+        },
+        {
+            "key": "catalog-1:25:02",
+            "parent_key": "catalog-1:25",
+            "name": "مدیریت ساختمان"
+        },
+        {
+            "key": "catalog-1:25:03",
+            "parent_key": "catalog-1:25",
+            "name": "نظافت"
+        },
+        {
+            "key": "catalog-2:b641bcbdb3755a8d54a4",
+            "parent_key": "catalog-1:25:03",
+            "name": "نظافت منزل"
+        },
+        {
+            "key": "catalog-2:c9844aa22d5f655173e8",
+            "parent_key": "catalog-1:25:03",
+            "name": "نظافت اداری"
+        },
+        {
+            "key": "catalog-2:9d588a5d527090513fae",
+            "parent_key": "catalog-1:25:03",
+            "name": "نظافت صنعتی"
+        },
+        {
+            "key": "catalog-2:e36c11014cc4f3c6cc94",
+            "parent_key": "catalog-1:25:03",
+            "name": "نماشویی"
+        },
+        {
+            "key": "catalog-2:c29a134e08c88a2556d1",
+            "parent_key": "catalog-1:25:03",
+            "name": "شست‌وشوی فرش و مبل"
+        },
+        {
+            "key": "catalog-1:25:04",
+            "parent_key": "catalog-1:25",
+            "name": "فضای سبز"
+        },
+        {
+            "key": "catalog-1:25:05",
+            "parent_key": "catalog-1:25",
+            "name": "تعمیرات لوازم خانگی"
+        },
+        {
+            "key": "catalog-1:25:06",
+            "parent_key": "catalog-1:25",
+            "name": "خدمات زیبایی"
+        },
+        {
+            "key": "catalog-1:25:07",
+            "parent_key": "catalog-1:25",
+            "name": "خدمات مراسم"
+        }
+    ]
+}
