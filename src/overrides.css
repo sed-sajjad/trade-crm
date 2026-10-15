@@ -1,15 +1,1 @@
-.more-filters{padding:0 15px 12px;border-bottom:1px solid #edf1f0}.more-filters summary{width:max-content;display:flex;align-items:center;gap:7px;padding:7px 0;color:#75888a;font-size:10px;cursor:pointer;list-style:none}.more-filters summary::-webkit-details-marker{display:none}.more-filters[open] summary{color:var(--teal)}.more-filters[open] summary svg:last-child{transform:rotate(180deg)}.extra-filter-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;padding:6px 0 2px}.extra-filter-grid .field-label{font-size:10px}.duplicate-link{display:inline-flex;margin-right:8px;color:#0f766e;text-decoration:underline;text-underline-offset:2px;font-weight:600}.error-banner>span{line-height:1.8}@media(max-width:760px){.more-filters{padding:0 11px 9px}.extra-filter-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.extra-filter-grid .field-control,.extra-filter-grid .select-field select{min-height:38px}.duplicate-link{margin-right:0;display:inline-block}}
-
-/* Contact form refinements: required searchable industries and a touch-friendly date picker. */
-.industry-field-prominent{margin:20px 0 24px;padding:14px;border:1px solid #e6eeec;border-radius:10px;background:#fbfdfc}
-.industry-field-prominent>.field-label{display:block;margin-bottom:8px}
-.industry-search{position:relative}
-.industry-search-clear{width:25px;height:25px;display:grid;place-items:center;flex:0 0 auto;border:0;border-radius:6px;background:transparent;color:#89999a;cursor:pointer}
-.industry-search-clear:hover{background:#edf5f3;color:var(--teal)}
-.date-picker-control{flex:1;min-width:140px;min-height:42px;display:flex;align-items:center;gap:8px;padding:0 10px;border:1px solid #e2e9e7;border-radius:8px;background:#fff;color:#839695}
-.date-picker-control:focus-within{border-color:#78b7ae;box-shadow:0 0 0 3px #edf7f4}
-.date-picker-control.has-error{border-color:#cf7770}
-.date-picker-control input{width:100%;min-width:0;height:40px;padding:0;border:0;outline:0;background:transparent;color:#34484e;font:inherit;font-size:12px;cursor:pointer;direction:ltr;text-align:left}
-.date-picker-control input::-webkit-calendar-picker-indicator{cursor:pointer;opacity:.72}
-.datetime-fields .time-input{flex:0 0 105px;width:105px}
-@media(max-width:760px){.industry-field-prominent{margin:16px 0 20px;padding:12px}.date-picker-control{min-width:0;gap:5px;padding:0 7px}.date-picker-control input{font-size:10px}.datetime-fields .time-input{flex-basis:92px;width:92px}}
+/* Legacy stylesheet. Shared component and responsive rules now live in style.css. */

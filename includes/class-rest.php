@@ -598,9 +598,23 @@ final class Rest {
 			$raw = $request->get_params();
 		}
 		$raw = is_array( $raw ) ? $raw : array();
-		$name = trim( sanitize_text_field( (string) ( $raw['name'] ?? '' ) ) );
-		if ( '' === $name || mb_strlen( $name ) > 190 ) {
-			return $this->field_error( 'name', 'نام مخاطب یا شرکت را وارد کنید.' );
+		$first_name = trim( sanitize_text_field( (string) ( $raw['first_name'] ?? '' ) ) );
+		$last_name  = trim( sanitize_text_field( (string) ( $raw['last_name'] ?? '' ) ) );
+		if ( '' === $first_name ) {
+			return $this->field_error( 'first_name', 'نام را وارد کنید.' );
+		}
+		if ( mb_strlen( $first_name ) > 100 ) {
+			return $this->field_error( 'first_name', 'نام نمی‌تواند بیشتر از ۱۰۰ نویسه باشد.' );
+		}
+		if ( '' === $last_name ) {
+			return $this->field_error( 'last_name', 'نام خانوادگی را وارد کنید.' );
+		}
+		if ( mb_strlen( $last_name ) > 100 ) {
+			return $this->field_error( 'last_name', 'نام خانوادگی نمی‌تواند بیشتر از ۱۰۰ نویسه باشد.' );
+		}
+		$name = $first_name . ' ' . $last_name;
+		if ( mb_strlen( $name ) > 190 ) {
+			return $this->field_error( 'last_name', 'ترکیب نام و نام خانوادگی نباید بیشتر از ۱۹۰ نویسه باشد.' );
 		}
 		$country = strtoupper( sanitize_text_field( (string) ( $raw['country_code'] ?? $this->settings_value()['default_phone_country'] ) ) );
 		if ( ! preg_match( '/^[A-Z]{2}$/', $country ) ) {
@@ -687,8 +701,8 @@ final class Rest {
 		}
 		$fields = array(
 			'name' => $name,
-			'first_name' => mb_substr( sanitize_text_field( (string) ( $raw['first_name'] ?? '' ) ), 0, 100 ),
-			'last_name' => mb_substr( sanitize_text_field( (string) ( $raw['last_name'] ?? '' ) ), 0, 100 ),
+			'first_name' => $first_name,
+			'last_name' => $last_name,
 			'company' => mb_substr( sanitize_text_field( (string) ( $raw['company'] ?? '' ) ), 0, 190 ),
 			'email' => $email,
 			'website' => $website,

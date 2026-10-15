@@ -71,9 +71,9 @@ try {
 		}
 	}
 	$assert( '' !== $phone, 'A unique temporary test number must be available.' );
-	$missing_industry = $request( 'POST', '/trade-crm/v1/contacts', array( 'name' => 'بدون حوزه ' . wp_generate_uuid4(), 'phone' => $phone, 'country_code' => 'US', 'request_id' => wp_generate_uuid4() ) );
+	$missing_industry = $request( 'POST', '/trade-crm/v1/contacts', array( 'first_name' => 'بدون', 'last_name' => 'حوزه ' . wp_generate_uuid4(), 'phone' => $phone, 'country_code' => 'US', 'request_id' => wp_generate_uuid4() ) );
 	$assert( 400 === $missing_industry->get_status() && 'trade_crm_invalid_field' === $missing_industry->get_data()['code'], 'The API must reject a contact without an industry.' );
-	$temp_contact = $request( 'POST', '/trade-crm/v1/contacts', array( 'name' => 'مخاطب آزمایشی ' . wp_generate_uuid4(), 'phone' => $phone, 'country_code' => 'US', 'industry_ids' => array( $child['id'], $active_root['id'] ), 'request_id' => wp_generate_uuid4() ) );
+	$temp_contact = $request( 'POST', '/trade-crm/v1/contacts', array( 'first_name' => 'مخاطب', 'last_name' => 'آزمایشی ' . wp_generate_uuid4(), 'phone' => $phone, 'country_code' => 'US', 'industry_ids' => array( $child['id'], $active_root['id'] ), 'request_id' => wp_generate_uuid4() ) );
 	$assert( 201 === $temp_contact->get_status(), 'A temporary contact with a child industry must be created.' );
 	$temporary_contact_id = (int) $temp_contact->get_data()['contact']['id'];
 	$filtered = ( new TradeCRM\Repository() )->list_contacts( array( 'archive' => 'active', 'limit' => 100, 'cursor' => '', 'industry_id' => (int) $other_root['id'] ) );
@@ -97,7 +97,7 @@ try {
 	$child_state = $request( 'GET', '/trade-crm/v1/industries/' . $child['id'] );
 	$assert( false === $child_state->get_data()['is_selectable'], 'A child beneath a disabled root must not be selectable.' );
 	$saved_contact = $request( 'GET', '/trade-crm/v1/contacts/' . $temporary_contact_id )->get_data();
-	$contact_update = array( 'name' => $saved_contact['name'], 'phone' => $saved_contact['numbers'][0]['number_e164'], 'country_code' => 'US', 'status' => $saved_contact['status'], 'industry_ids' => array( $child['id'], $active_root['id'] ), 'version' => $saved_contact['version'] );
+	$contact_update = array( 'first_name' => $saved_contact['first_name'], 'last_name' => $saved_contact['last_name'], 'phone' => $saved_contact['numbers'][0]['number_e164'], 'country_code' => 'US', 'status' => $saved_contact['status'], 'industry_ids' => array( $child['id'], $active_root['id'] ), 'version' => $saved_contact['version'] );
 	$preserved = $request( 'PATCH', '/trade-crm/v1/contacts/' . $temporary_contact_id, $contact_update );
 	$preserved_industries = 200 === $preserved->get_status() ? $preserved->get_data()['industries'] : array();
 	$inactive_preserved = array_filter( $preserved_industries, static fn ( array $item ): bool => (int) $item['id'] === (int) $child['id'] && ! $item['is_selectable'] );

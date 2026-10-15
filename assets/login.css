@@ -33,10 +33,10 @@
 }
 
 body.login {
-	--login-accent: #0f766e;
-	--login-accent-dark: #0b605a;
+	--login-accent: #146451;
+	--login-accent-dark: #0d4d3d;
 	--login-ink: #213b3a;
-	--login-muted: #697c79;
+	--login-muted: #526861;
 	--wp-admin-theme-color: var(--login-accent);
 	--wp-admin-theme-color-darker-10: var(--login-accent-dark);
 	--wp-admin-theme-color-darker-20: var(--login-accent-dark);
@@ -50,9 +50,13 @@ body.login {
 	background: #f3f7f6;
 	color: var(--login-ink);
 	font-family: 'Trade CRM Login', Tahoma, Arial, sans-serif;
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 1.7;
 }
+
+body.login #login *,
+body.login #login *::before,
+body.login #login *::after { box-sizing: border-box; }
 
 body.login #login {
 	box-sizing: border-box;
@@ -90,7 +94,7 @@ body.login .wp-login-logo { display: none; }
 body.login .trade-crm-login-site {
 	margin-bottom: 16px;
 	color: var(--login-accent);
-	font-size: 13px;
+	font-size: 14px;
 	font-weight: 600;
 	overflow-wrap: anywhere;
 }
@@ -99,15 +103,15 @@ body.login .trade-crm-login-intro h2 {
 	margin-bottom: 8px;
 	color: var(--login-ink);
 	font-family: inherit;
-	font-size: 23px;
+	font-size: 24px;
 	font-weight: 600;
 	line-height: 1.6;
 }
 
 body.login .trade-crm-login-description {
 	color: var(--login-muted);
-	font-size: 13px;
-	line-height: 1.9;
+	font-size: 14px;
+	line-height: 1.7;
 }
 
 body.login #login form {
@@ -119,8 +123,12 @@ body.login #login form {
 	overflow: visible;
 }
 
-body.login label { margin-bottom: 8px; font-size: 13px; font-weight: 400; }
-body.login input, body.login button, body.login .button { font-family: inherit; }
+body.login label { margin-bottom: 8px; font-size: 14px; font-weight: 400; line-height: 1.7; }
+body.login input, body.login button, body.login select, body.login textarea, body.login .button { font-family: inherit; }
+body.login #login .button:not(.wp-hide-pw) { min-height: 48px; font-size: 15px; }
+body.login #login form p { font-size: 16px; line-height: 1.7; overflow-wrap: anywhere; }
+body.login #login form .indicator-hint,
+body.login #login #reg_passmail { color: var(--login-muted); font-size: 14px; line-height: 1.7; }
 
 body.login form .input,
 body.login input[type='text'],
@@ -141,14 +149,22 @@ body.login input[type='email'] {
 	transition: border-color .15s, box-shadow .15s;
 }
 
+body.login input:not([type='checkbox']):not([type='radio']):not([type='submit']),
+body.login select,
+body.login textarea { font-size: 16px; }
+
+body.login input::placeholder,
+body.login textarea::placeholder { color: var(--login-muted); opacity: 1; }
+
 body.login form .input:focus {
 	border-color: var(--login-accent);
 	background: #fff;
-	box-shadow: 0 0 0 3px rgba(15, 118, 110, .1);
+	box-shadow: 0 0 0 3px rgba(20, 100, 81, .1);
 	outline: 2px solid transparent;
 }
 
 body.login #user_login, body.login .password-input { direction: ltr; text-align: left; }
+body.login #login input.password-input { padding-right: 54px; }
 
 body.login .button.wp-hide-pw {
 	width: 48px;
@@ -162,19 +178,29 @@ body.login .button.wp-hide-pw:hover { color: var(--login-accent); }
 
 body.login #login form .forgetmenot {
 	float: none;
-	min-height: 24px;
+	min-height: 44px;
 	margin-bottom: 16px;
 	gap: 8px;
 }
 
-body.login .forgetmenot label { margin: 0; color: var(--login-muted); font-size: 12px; }
+body.login .forgetmenot label,
+body.login .pw-weak label {
+	display: inline-flex;
+	align-items: center;
+	min-height: 44px;
+	margin: 0;
+	color: var(--login-muted);
+	font-size: 14px;
+	line-height: 1.7;
+}
+body.login #login form .trade-crm-remember-hint { margin: 0 0 20px; color: var(--login-muted); font-size: 14px; line-height: 1.7; }
 
 body.login input[type='checkbox'] {
 	width: 16px;
 	height: 16px;
 	min-width: 16px;
 	margin: 0;
-	border-color: #bfcec8;
+	border-color: #7b9188;
 	border-radius: 4px;
 }
 
@@ -189,7 +215,7 @@ body.login .button-primary {
 	border-radius: 10px;
 	background: var(--login-accent);
 	color: #fff;
-	font-size: 14px;
+	font-size: 15px;
 	font-weight: 600;
 	line-height: 1.8;
 	box-shadow: none;
@@ -208,7 +234,7 @@ body.login #nav {
 	margin: 22px 0 0;
 	padding: 0;
 	text-align: center;
-	font-size: 12px;
+	font-size: 14px;
 }
 
 body.login #backtoblog {
@@ -216,19 +242,36 @@ body.login #backtoblog {
 	padding: 20px 0 0;
 	border-top: 1px solid #edf1ef;
 	text-align: center;
-	font-size: 12px;
+	font-size: 14px;
 }
 
-body.login #nav a, body.login #backtoblog a {
-	display: inline-block;
-	padding: 3px 2px;
+body.login #nav a,
+body.login #backtoblog a,
+body.login .privacy-policy-page-link a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 44px;
+	min-height: 44px;
+	max-width: 100%;
+	padding: 8px 4px;
 	color: var(--login-muted);
+	line-height: 1.7;
 	text-decoration: none;
+	overflow-wrap: anywhere;
 }
 
-body.login #nav a:hover, body.login #backtoblog a:hover {
+body.login #nav a:hover,
+body.login #backtoblog a:hover,
+body.login .privacy-policy-page-link a:hover {
 	color: var(--login-accent);
 	text-decoration: underline;
+}
+
+body.login a:focus-visible,
+body.login input[type='checkbox']:focus-visible {
+	outline: 2px solid var(--login-accent);
+	outline-offset: 3px;
 }
 
 body.login .message, body.login .notice, body.login .success {
@@ -237,7 +280,9 @@ body.login .message, body.login .notice, body.login .success {
 	border-radius: 8px;
 	background: #f0f8f5;
 	border-inline-start-color: var(--login-accent);
-	font-size: 13px;
+	font-size: 14px;
+	line-height: 1.7;
+	overflow-wrap: anywhere;
 	box-shadow: none;
 }
 
@@ -254,19 +299,36 @@ body.login #pass-strength-result {
 	width: 100%;
 	margin: 8px 0 16px;
 	border-radius: 6px;
+	font-size: 14px;
+	line-height: 1.7;
 }
 
-body.login .reset-pass-submit .button:not(.button-primary) { margin-bottom: 12px; }
-body.login .privacy-policy-page-link { margin: 20px 0 0; font-size: 12px; }
+body.login .reset-pass-submit { flex-direction: column; gap: 12px; }
+body.login .reset-pass-submit .button:not(.button-primary) {
+	width: 100%;
+	min-height: 48px;
+	margin: 0;
+	padding: 10px 16px;
+	border-color: #7b9188;
+	border-radius: 10px;
+	background: #fff;
+	color: var(--login-accent-dark);
+	font-size: 15px;
+	line-height: 1.8;
+}
+body.login .privacy-policy-page-link { margin: 20px 0 0; font-size: 14px; }
 body.login.interim-login { min-height: 0; padding: 16px; }
 body.login.interim-login #login { margin: 0 auto; padding: 24px; }
 body.login.interim-login .trade-crm-login-mark,
 body.login.interim-login .trade-crm-login-site { display: none; }
 
 @media (max-width: 480px) {
-	body.login { padding: 24px 16px; }
-	body.login #login { padding: 28px 24px; border-radius: 16px; }
-	body.login .trade-crm-login-intro h2 { font-size: 21px; }
+	body.login {
+		padding: 24px 16px;
+		padding-top: max(24px, env(safe-area-inset-top));
+		padding-bottom: max(24px, env(safe-area-inset-bottom));
+	}
+	body.login #login { padding: 28px 20px; border-radius: 16px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

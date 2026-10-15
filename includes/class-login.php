@@ -3,17 +3,50 @@ namespace TradeCRM;
 
 defined( 'ABSPATH' ) || exit;
 
-/** Presentation only: WordPress continues to handle authentication and redirects. */
+/** WordPress handles authentication; remembered CRM logins have a bounded lifetime. */
 final class Login {
 	public function boot(): void {
 		add_action( 'login_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_filter( 'login_message', array( $this, 'intro' ) );
 		add_filter( 'login_display_language_dropdown', '__return_false' );
+		add_filter( 'auth_cookie_expiration', array( $this, 'cookie_expiration' ), 10, 3 );
+		add_action( 'login_form', array( $this, 'remember_hint' ) );
+	}
+
+	private function is_crm_login(): bool {
+		$redirect = $_POST['redirect_to'] ?? $_GET['redirect_to'] ?? '';
+		if ( ! is_string( $redirect ) ) {
+			return false;
+		}
+		$target = wp_parse_url( wp_validate_redirect( wp_unslash( $redirect ), '' ) );
+		$app = wp_parse_url( App::url() );
+		if ( ! is_array( $target ) || ! is_array( $app ) || untrailingslashit( $target['path'] ?? '' ) !== untrailingslashit( $app['path'] ?? '' ) ) {
+			return false;
+		}
+		if ( isset( $target['host'] ) && ( strtolower( $target['host'] ) !== strtolower( $app['host'] ?? '' ) || ( $target['port'] ?? null ) !== ( $app['port'] ?? null ) || ( $target['scheme'] ?? '' ) !== ( $app['scheme'] ?? '' ) ) ) {
+			return false;
+		}
+		return true;
+	}
+
+	public function cookie_expiration( int $length, int $user_id, bool $remember ): int {
+		return $remember && $this->is_crm_login() && user_can( $user_id, 'manage_trade_crm' ) ? 30 * DAY_IN_SECONDS : $length;
+	}
+
+	public function remember_hint(): void {
+		if ( $this->is_crm_login() ) {
+			echo '<p class="trade-crm-remember-hint">' . esc_html__( 'در دستگاه شخصی، «مرا به خاطر بسپار» را برای ماندن ورود تا ۳۰ روز انتخاب کنید. روی دستگاه مشترک این گزینه را فعال نکنید.', 'trade-crm' ) . '</p>';
+		}
 	}
 
 	public function enqueue_styles(): void {
 		$path = TRADE_CRM_DIR . 'assets/login.css';
 		wp_enqueue_style( 'trade-crm-login', TRADE_CRM_URL . 'assets/login.css', array( 'login' ), (string) filemtime( $path ) );
+		global $action;
+		if ( 'login' === $action ) {
+			$script = TRADE_CRM_DIR . 'assets/login.js';
+			wp_enqueue_script( 'trade-crm-login', TRADE_CRM_URL . 'assets/login.js', array(), (string) filemtime( $script ), true );
+		}
 	}
 
 	public function intro( string $message ): string {

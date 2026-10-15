@@ -59,7 +59,11 @@ $GLOBALS['wp_filter']['wp_loaded'][99][] = array(
 	'accepted_args' => 0,
 );
 $path = substr( (string) parse_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH ), strlen( $mount ) );
-$script = '/wp-login.php' === $path ? '/wp-login.php' : '/index.php';
+$script = match ( $path ) {
+	'/wp-login.php' => '/wp-login.php',
+	'/wp-admin/admin-ajax.php' => '/wp-admin/admin-ajax.php',
+	default => '/index.php',
+};
 $_SERVER['SCRIPT_NAME'] = $mount . $script;
 $_SERVER['PHP_SELF'] = $mount . $script;
 $_SERVER['SCRIPT_FILENAME'] = $root . $script;

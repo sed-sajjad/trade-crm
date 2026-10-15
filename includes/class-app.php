@@ -22,6 +22,22 @@ final class App {
 		self::add_rewrite_rules();
 	}
 
+	/** Read-only renewal: the existing WordPress cookie must still be valid. */
+	public function session(): void {
+		$this->no_store();
+		if ( ! is_user_logged_in() ) {
+			wp_send_json( array( 'code' => 'trade_crm_auth_required', 'message' => 'برای استفاده از CRM وارد شوید.' ), 401 );
+		}
+		if ( ! current_user_can( 'manage_trade_crm' ) ) {
+			wp_send_json( array( 'code' => 'trade_crm_forbidden', 'message' => 'به برنامه CRM دسترسی ندارید.' ), 403 );
+		}
+		wp_send_json( array(
+			'user_id' => get_current_user_id(),
+			'nonce' => wp_create_nonce( 'wp_rest' ),
+			'logout_url' => wp_logout_url( self::url() ),
+		), 200 );
+	}
+
 	public function render(): void {
 		$this->no_store();
 		if ( ! is_user_logged_in() ) {
@@ -52,6 +68,7 @@ final class App {
 		$config = array(
 			'apiRoot' => esc_url_raw( rest_url( 'trade-crm/v1/' ) ),
 			'nonce' => wp_create_nonce( 'wp_rest' ),
+			'sessionUrl' => add_query_arg( 'action', 'trade_crm_session', admin_url( 'admin-ajax.php' ) ),
 			'appUrl' => self::url(),
 			'loginUrl' => wp_login_url( self::url() ),
 			'logoutUrl' => wp_logout_url( self::url() ),

@@ -87,7 +87,7 @@ $request = static function ( string $method, string $route, array $params = arra
 	return rest_get_server()->dispatch( $rest );
 };
 $create_contact = static function ( array $industries, string $phone = '+12025550189' ) use ( $request, $assert ): int {
-	$result = $request( 'POST', '/contacts', array( 'name' => 'آزمون کیوی', 'phone' => $phone, 'country_code' => 'US', 'industry_ids' => $industries, 'request_id' => wp_generate_uuid4() ) );
+	$result = $request( 'POST', '/contacts', array( 'first_name' => 'آزمون', 'last_name' => 'کیوی', 'phone' => $phone, 'country_code' => 'US', 'industry_ids' => $industries, 'request_id' => wp_generate_uuid4() ) );
 	$assert( 201 === $result->get_status(), 'Could not create isolated test contact.' );
 	return (int) $result->get_data()['contact']['id'];
 };

@@ -54,7 +54,7 @@ try {
       assert(!/Fatal error:|Parse error:/.test(before.body + after.body), 'PHP error in public response');
       if (path.startsWith('/wp-login.php')) {
         const signature = publicSignature(after);
-        signature.tags = signature.tags.filter(tag => !tag.includes('trade-crm-login-css'));
+        signature.tags = signature.tags.filter(tag => !/trade-crm-login-(css|js)/.test(tag));
         assert.deepEqual(signature, publicSignature(before), 'Login headers or core assets changed: ' + mount + path);
         check(after.body.includes('trade-crm-login-css') && after.body.includes('trade-crm-login-intro') && !after.body.includes('id="language-switcher"'), `minimal login presentation: ${mount + path}`);
         const formTag = body => body.match(/<form\b[^>]*id=["'](?:loginform|lostpasswordform)["'][^>]*>/i)?.[0];
@@ -92,16 +92,23 @@ try {
     await activation;
     check(deleted.length === 1 && deleted[0] === runInContext('CACHE_PREFIX', context) + 'old', 'worker only removes old caches belonging to this CRM installation');
     let intercepted = false;
-    for (const path of ['/', '/wp-login.php', '/wp-admin/', '/wp-json/wp/v2/types', '/?rest_route=/trade-crm/v1/bootstrap', '/wp-content/themes/site/style.css']) {
+    for (const path of ['/', '/wp-login.php', '/wp-admin/', '/wp-admin/admin-ajax.php?action=trade_crm_session', '/wp-json/wp/v2/types', '/?rest_route=/trade-crm/v1/bootstrap', '/wp-content/themes/site/style.css']) {
       listeners.fetch({ request: { url: base + mount + path, method: 'GET', mode: 'navigate' }, respondWith: () => { intercepted = true; } });
     }
     check(!intercepted, 'worker does not intercept public pages, login, admin or REST requests');
     const api = await get(mount + '/?rest_route=/trade-crm/v1/bootstrap');
     check(api.status === 401 && api.headers['cache-control'].includes('no-store') && api.headers['x-robots-tag'].includes('noindex'), 'guest API denied and not cacheable/indexable');
+    const guestSession = await get(mount + '/wp-admin/admin-ajax.php?action=trade_crm_session');
+    check(guestSession.status === 401 && !JSON.parse(guestSession.body).nonce && guestSession.headers['cache-control'].includes('no-store'), 'guest session renewal denied without leaking a nonce');
     const publicApiBefore = await get(mount + '/?rest_route=/wp/v2/types', 'off');
     const publicApiAfter = await get(mount + '/?rest_route=/wp/v2/types');
     check(publicApiAfter.status === publicApiBefore.status && publicApiAfter.headers['cache-control'] === publicApiBefore.headers['cache-control'] && publicApiAfter.headers['x-robots-tag'] === publicApiBefore.headers['x-robots-tag'], 'other REST namespaces keep their cache and robots policy');
     if (!publicOnly) {
+      const deniedSession = await get(mount + '/wp-admin/admin-ajax.php?action=trade_crm_session', 'on', 'subscriber');
+      check(deniedSession.status === 403 && !JSON.parse(deniedSession.body).nonce, 'session renewal requires the CRM capability');
+      const renewedSession = await get(mount + '/wp-admin/admin-ajax.php?action=trade_crm_session', 'on', 'administrator');
+      const sessionData = JSON.parse(renewedSession.body);
+      check(renewedSession.status === 200 && sessionData.user_id > 0 && !!sessionData.nonce && !!sessionData.logout_url && renewedSession.headers['cache-control'].includes('no-store') && renewedSession.headers.vary.includes('Cookie'), 'valid cookie session can renew its nonce privately without a prior nonce');
       const denied = await get(mount + '/crm/', 'on', 'subscriber');
       check(denied.status === 403 && denied.headers['cache-control'].includes('no-store') && denied.headers['x-robots-tag'].includes('noindex'), 'user without CRM capability gets a private 403');
       const app = await get(mount + '/crm/', 'on', 'administrator');

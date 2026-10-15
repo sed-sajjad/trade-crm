@@ -57,12 +57,31 @@ try {
     let savedContactId;
     try {
       await page.goto(`${origin}/crm/?view=form`);
-      const name = page.getByRole('textbox', { name: 'نام مخاطب یا شرکت *', exact: true });
-      const phone = page.getByRole('textbox', { name: 'شماره تماس', exact: true });
+      const firstName = page.getByRole('textbox', { name: 'نام *', exact: true });
+      const lastName = page.getByRole('textbox', { name: 'نام خانوادگی *', exact: true });
+      const phone = page.getByRole('textbox', { name: 'شماره همراه / تماس', exact: true });
       const query = page.getByRole('textbox', { name: 'جست‌وجوی حوزه فعالیت', exact: true });
-      await name.waitFor();
-      const fixtureName = `آزمون مرورگر حوزه ${scenario.name}`;
-      await name.fill(fixtureName);
+      await firstName.waitFor();
+      const fixtureFirstName = 'آزمون مرورگر';
+      const fixtureLastName = `حوزه ${scenario.name}`;
+      const fixtureName = `${fixtureFirstName} ${fixtureLastName}`;
+      await firstName.focus();
+      await page.keyboard.press('Tab');
+      assert.equal(await lastName.evaluate((element) => element === document.activeElement), true, 'Tab order must move from first name to last name.');
+      await page.keyboard.press('Tab');
+      assert.equal(await phone.evaluate((element) => element === document.activeElement), true, 'Tab order must reach the phone after both name fields.');
+      const nameColumns = await page.locator('.form-grid').first().evaluate((element) => getComputedStyle(element).gridTemplateColumns.split(' ').length);
+      assert.equal(nameColumns, scenario.isMobile ? 1 : 2, 'Name fields must use two columns on desktop and one on mobile.');
+      const contactRowGap = await page.evaluate(() => {
+        const rows = document.querySelectorAll('.form-section:first-of-type > .form-grid');
+        return rows[1].getBoundingClientRect().top - rows[0].getBoundingClientRect().bottom;
+      });
+      assert.ok(contactRowGap >= 22, 'The phone/WhatsApp row must be separated from the name row on desktop and mobile.');
+      const industryWidth = await page.locator('.industry-field').first().evaluate((element) => Math.round(element.getBoundingClientRect().width));
+      const formWidth = await page.locator('.form-grid').first().evaluate((element) => Math.round(element.getBoundingClientRect().width));
+      assert.equal(industryWidth, formWidth, 'The industry picker must span the form width.');
+      await firstName.fill(fixtureFirstName);
+      await lastName.fill(fixtureLastName);
       await phone.fill(scenario.phone);
       await query.fill('كيوي');
       const kiwi = page.locator('.industry-search-result').filter({ hasText: 'کیوی' });
@@ -81,7 +100,8 @@ try {
       else { await clear.focus(); await clear.press('Enter'); }
       assert.equal(await query.inputValue(), '');
       assert.equal(await page.locator('.industry-selected-chip').count(), 2);
-      assert.equal(await name.inputValue(), fixtureName);
+      assert.equal(await firstName.inputValue(), fixtureFirstName);
+      assert.equal(await lastName.inputValue(), fixtureLastName);
       assert.equal(await phone.inputValue(), scenario.phone);
       assert.ok(await page.locator('.industry-picker-tree').isVisible());
       const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
@@ -91,6 +111,10 @@ try {
       await page.getByRole('button', { name: 'ثبت مخاطب', exact: true }).click();
       const saveResponse = await saveResponsePromise;
       assert.equal(saveResponse.status(), 201, 'Real contact creation must succeed.');
+      const submitted = saveResponse.request().postDataJSON();
+      assert.equal(submitted.first_name, fixtureFirstName);
+      assert.equal(submitted.last_name, fixtureLastName);
+      assert.equal(Object.hasOwn(submitted, 'name'), false, 'The form must not submit a duplicate display name.');
       const payload = await saveResponse.json();
       savedContactId = payload.contact.id;
       const stored = await context.request.get(`${origin}/wp-json/trade-crm/v1/contacts/${savedContactId}`);
@@ -101,7 +125,7 @@ try {
       assert.ok(contact.numbers.some((number) => number.number_e164 === scenario.phone));
       assert.deepEqual(runtimeErrors, [], 'Browser runtime errors occurred.');
       assert.deepEqual(failedApis, [], 'REST requests failed.');
-      console.log(`PASS ${scenario.name}: Arabic Kiwi search, two selections, clear button ${scenario.hasTouch ? 'tap' : 'keyboard'}, retained name/phone, no overflow, real SQL save with both industries`);
+      console.log(`PASS ${scenario.name}: Arabic Kiwi search, two selections, clear button ${scenario.hasTouch ? 'tap' : 'keyboard'}, retained first/last name and phone, no overflow, real SQL save with both industries`);
     } finally {
       if (savedContactId) {
         const cleanup = await context.request.post(`${origin}/_crm_test_cleanup`, { data: { id: savedContactId } });
