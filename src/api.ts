@@ -48,6 +48,8 @@ export async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
     if (init.body) headers.set('Content-Type', 'application/json');
     const response = await fetch(new URL(path.replace(/^\//, ''), cfg.apiRoot), { ...init, headers, credentials: 'same-origin', mode: 'same-origin', cache: 'no-store' });
     const payload = await response.json().catch(() => ({}));
+    // Aborting while the body is being read must not turn into a successful empty result.
+    init.signal?.throwIfAborted();
     if (response.status === 403 && payload?.code === 'rest_cookie_invalid_nonce' && attempt === 0) {
       // WordPress rejects this request before the mutation runs, so one replay is safe.
       // A concurrent request may already have obtained a current nonce.

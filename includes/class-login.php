@@ -45,7 +45,7 @@ final class Login {
 		global $action;
 		if ( 'login' === $action ) {
 			$script = TRADE_CRM_DIR . 'assets/login.js';
-			wp_enqueue_script( 'trade-crm-login', TRADE_CRM_URL . 'assets/login.js', array(), (string) filemtime( $script ), true );
+			wp_enqueue_script( 'trade-crm-login', TRADE_CRM_URL . 'assets/login.js', array(), substr( hash_file( 'sha256', $script ), 0, 12 ), true );
 		}
 	}
 

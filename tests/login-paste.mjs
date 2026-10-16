@@ -1,12 +1,15 @@
 /** Local login regression: native Chrome clipboard and WebKit ClipboardEvent handling. */
 import assert from 'node:assert/strict';
 import { createRequire } from 'node:module';
+import { createHash } from 'node:crypto';
+import { readFile } from 'node:fs/promises';
 
 const require = createRequire(import.meta.url);
 const { chromium, webkit } = require(process.env.TRADE_CRM_PLAYWRIGHT_MODULE || 'playwright');
 const origin = process.env.TRADE_CRM_LOGIN_ORIGIN || 'http://localhost/trade-crm';
 assert.match(origin, /^http:\/\/(?:localhost|127\.0\.0\.1)(?::\d+)?(?:\/trade-crm)?$/, 'Only test a local installation.');
 const email = 'sample.user@example.com';
+const scriptVersion = createHash('sha256').update(await readFile(new URL('../assets/login.js', import.meta.url))).digest('hex').slice(0, 12);
 const formTail = 'رمز عبور                        در دستگاه شخصی، «مرا به خاطر بسپار» را برای ماندن ورود تا ۳۰ روز انتخاب کنید. روی دستگاه مشترک این گزینه را فعال نکنید.  مرا به خاطر بسپار                            رمز عبورتان را گم کرده‌اید؟     → رفتن به magica CRM';
 const scenarios = [
   [email, email],
@@ -37,6 +40,7 @@ for (const engine of ['chromium', 'webkit']) {
       });
       await page.goto(`${origin}/wp-login.php?redirect_to=${encodeURIComponent(`${origin}/crm/`)}`, { waitUntil: 'networkidle' });
       assert.equal(await page.locator('#trade-crm-login-js').count(), 1, 'WordPress must enqueue the fix.');
+      assert.equal(new URL(await page.locator('#trade-crm-login-js').getAttribute('src')).searchParams.get('ver'), scriptVersion, 'Script cache key must match its actual content.');
       const username = page.locator('#user_login');
       async function paste(target, text) {
         await target.fill('');
@@ -72,6 +76,45 @@ for (const engine of ['chromium', 'webkit']) {
         assert.equal(await copy(0, expected.length), expected, `${engine} ${width}px copy must contain only the field selection`);
         checks += 2;
       }
+      const guide = await page.locator('.trade-crm-remember-hint').textContent();
+      for (const inputType of ['insertFromPaste', 'insertReplacementText', 'insertFromDrop', 'insertText', '']) {
+        await username.evaluate((input, data) => {
+          input.value = data.value;
+          input.dispatchEvent(new InputEvent('input', { bubbles: true, inputType: data.inputType }));
+        }, { value: `\u200f ${email} ${guide}`, inputType });
+        assert.equal(await username.inputValue(), email, 'Actual value must be repaired without a clipboard event.');
+        assert.equal(await copy(0, email.length), email);
+        checks += 2;
+      }
+      await username.evaluate((input, value) => {
+        input.dispatchEvent(new Event('paste', { bubbles: true, cancelable: true }));
+        input.value = value;
+      }, `${email} ${guide}`);
+      await page.waitForFunction((value) => document.getElementById('user_login').value === value, email);
+      checks++;
+      await username.evaluate((input, value) => {
+        input.value = value;
+        window.dispatchEvent(new PageTransitionEvent('pageshow', { persisted: true }));
+      }, `${email}${formTail}`);
+      assert.equal(await username.inputValue(), email, 'Restored pages must repair a dirty username.');
+      checks++;
+      const submission = await username.evaluate((input, value) => {
+        input.value = value;
+        const event = new Event('submit', { bubbles: true, cancelable: true });
+        const allowed = input.form.dispatchEvent(event);
+        return { allowed, username: new FormData(input.form).get('log') };
+      }, `${email} ${guide}`);
+      assert.deepEqual(submission, { allowed: true, username: email }, 'Submission must read the repaired value.');
+      checks++;
+      const blocked = await username.evaluate((input, value) => {
+        input.value = value;
+        input.dispatchEvent(new InputEvent('input', { bubbles: true, inputType: 'insertFromPaste' }));
+        return { invalid: input.validity.customError, allowed: input.form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true })) };
+      }, guide);
+      assert.deepEqual(blocked, { invalid: true, allowed: false }, 'Guide-only content must not be submitted as a username.');
+      await paste(username, email);
+      assert.equal(await username.evaluate((input) => input.validity.valid), true, 'Correcting the field must clear the paste error.');
+      checks += 2;
       await username.fill(email);
       assert.equal(await copy(0, 6), 'sample', 'Partial copy must remain partial.');
       const password = page.locator('#user_pass');

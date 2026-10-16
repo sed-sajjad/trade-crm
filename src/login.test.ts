@@ -2,6 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import script from '../assets/login.js?raw';
 
 const email = 'sample.user@example.com';
+const guide = 'در دستگاه شخصی، «مرا به خاطر بسپار» را برای ماندن ورود تا ۳۰ روز انتخاب کنید. روی دستگاه مشترک این گزینه را فعال نکنید.';
 const formTail = 'رمز عبور                        در دستگاه شخصی، «مرا به خاطر بسپار» را برای ماندن ورود تا ۳۰ روز انتخاب کنید. روی دستگاه مشترک این گزینه را فعال نکنید.  مرا به خاطر بسپار                            رمز عبورتان را گم کرده‌اید؟     → رفتن به magica CRM';
 let username: HTMLInputElement;
 
@@ -22,7 +23,7 @@ function copy(target: HTMLInputElement, selection: [number, number]) {
 }
 
 beforeEach(() => {
-  document.body.innerHTML = '<form id="loginform"><input id="user_login"><label for="user_pass">رمز عبور</label><input id="user_pass" type="password"></form>';
+  document.body.innerHTML = `<form id="loginform"><input id="user_login" name="log"><label for="user_pass">رمز عبور</label><input id="user_pass" type="password"><p class="trade-crm-remember-hint">${guide}</p><label for="rememberme">مرا به خاطر بسپار</label></form>`;
   username = document.querySelector('#user_login')!;
   // Execute the same standalone script that WordPress loads, with a fresh form.
   new Function(script)();
@@ -60,6 +61,78 @@ describe('login email paste', () => {
 
   it('removes surrounding whitespace and invisible direction marks from an email', () => {
     expect(paste(username, `\u200f\u00a0 \n${email.slice(0, 7)}\u200b${email.slice(7)}\u2069\t `).defaultPrevented).toBe(true);
+    expect(username.value).toBe(email);
+  });
+
+  it.each(['insertFromPaste', 'insertReplacementText', 'insertFromDrop', 'insertText', ''])('cleans the actual field after %s, even without a paste event', (inputType) => {
+    username.value = `\u200f ${email}      ${guide}`;
+    username.dispatchEvent(new InputEvent('input', { bubbles: true, inputType }));
+    expect(username.value).toBe(email);
+    expect(username.validity.valid).toBe(true);
+  });
+
+  it('recovers an email when native single-line insertion joins it directly to the password label', () => {
+    username.value = `${email}${formTail}`;
+    username.dispatchEvent(new InputEvent('input', { bubbles: true, inputType: 'insertFromPaste' }));
+    expect(username.value).toBe(email);
+  });
+
+  it('cleans a restored field on pageshow and a later autofill on change', () => {
+    username.value = `${email} ${guide}`;
+    window.dispatchEvent(new Event('pageshow'));
+    expect(username.value).toBe(email);
+    username.value = `\u200f ${email} `;
+    username.dispatchEvent(new Event('change', { bubbles: true }));
+    expect(username.value).toBe(email);
+  });
+
+  it('normalizes the actual form value before submission even if no input event fired', () => {
+    username.value = `${email} ${guide}`;
+    const form = document.querySelector<HTMLFormElement>('#loginform')!;
+    const event = new Event('submit', { bubbles: true, cancelable: true });
+    form.dispatchEvent(event);
+    expect(new FormData(form).get('log')).toBe(email);
+    expect(event.defaultPrevented).toBe(false);
+  });
+
+  it('blocks a field containing the guide without an identifiable email and clears the error after correction', () => {
+    username.value = guide;
+    username.dispatchEvent(new InputEvent('input', { bubbles: true, inputType: 'insertFromPaste' }));
+    expect(username.validity.customError).toBe(true);
+    const event = new Event('submit', { bubbles: true, cancelable: true });
+    vi.spyOn(username, 'reportValidity').mockReturnValue(false);
+    document.querySelector('#loginform')!.dispatchEvent(event);
+    expect(event.defaultPrevented).toBe(true);
+    username.value = email;
+    username.dispatchEvent(new InputEvent('input', { bubbles: true, inputType: 'insertText' }));
+    expect(username.validity.customError).toBe(false);
+  });
+
+  it('does not rewrite ordinary typing or change usernames containing spaces', () => {
+    username.value = `${email} `;
+    username.dispatchEvent(new InputEvent('input', { bubbles: true, inputType: 'insertText', data: ' ' }));
+    expect(username.value).toBe(`${email} `);
+    username.value = 'نام\u200cکاربری با فاصله';
+    username.dispatchEvent(new Event('change', { bubbles: true }));
+    expect(username.value).toBe('نام\u200cکاربری با فاصله');
+  });
+
+  it('preserves a label word inside an email when the form uses English labels', () => {
+    document.body.innerHTML = '<form id="loginform"><input id="user_login"><label for="user_pass">Password</label></form>';
+    username = document.querySelector('#user_login')!;
+    new Function(script)();
+    paste(username, 'Password@example.com Password Remember Me');
+    expect(username.value).toBe('Password@example.com');
+    username.value = 'Password@example.com ';
+    username.dispatchEvent(new InputEvent('input', { bubbles: true, inputType: 'insertText', data: ' ' }));
+    expect(username.value).toBe('Password@example.com ');
+  });
+
+  it('does not alter a composition until the user commits it', () => {
+    username.value = `${email} ${guide}`;
+    username.dispatchEvent(new InputEvent('input', { bubbles: true, isComposing: true }));
+    expect(username.value).toBe(`${email} ${guide}`);
+    username.dispatchEvent(new CompositionEvent('compositionend', { bubbles: true }));
     expect(username.value).toBe(email);
   });
 

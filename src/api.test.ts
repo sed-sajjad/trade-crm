@@ -105,6 +105,20 @@ describe('WordPress session recovery', () => {
     expect(fetchMock).toHaveBeenCalledTimes(2);
   });
 
+  it.each(['contacts?industry_id=11', 'industries?q=pistachio'])('preserves cancellation while reading the response body for %s', async (path) => {
+    const controller = new AbortController();
+    const response = json({ items: [] }, 200, { 'X-WP-Nonce': 'cancelled-token' });
+    vi.spyOn(response, 'json').mockImplementation(async () => {
+      controller.abort();
+      throw controller.signal.reason;
+    });
+    fetchMock.mockResolvedValueOnce(response);
+    await expect(api(path, { signal: controller.signal })).rejects.toMatchObject({ name: 'AbortError' });
+    expect(window.tradeCrmConfig.nonce).toBe('expired-token');
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    expect(stale).not.toHaveBeenCalled();
+  });
+
   it('does not replay requests after CRM access has been revoked', async () => {
     fetchMock.mockResolvedValueOnce(expired()).mockResolvedValueOnce(json({ code: 'trade_crm_forbidden' }, 403));
     await expect(api('contacts', { method: 'POST', body: '{}' })).rejects.toMatchObject({ code: 'trade_crm_forbidden' });
