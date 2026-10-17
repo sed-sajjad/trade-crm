@@ -169,10 +169,11 @@ final class Tables {
 
 	public static function status_labels(): array {
 		return array(
-			'new'         => 'جدید',
-			'following_up' => 'در حال پیگیری',
-			'customer'    => 'مشتری',
-			'closed'      => 'بسته‌شده',
+			'new'                => 'جدید',
+			'following_up'       => 'در حال پیگیری',
+			'potential_customer' => 'مشتری احتمالی',
+			'customer'           => 'مشتری',
+			'closed'             => 'بسته‌شده',
 		);
 	}
 }

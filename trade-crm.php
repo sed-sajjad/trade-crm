@@ -2,7 +2,7 @@
 /**
  * Plugin Name: CRM بازرگان
  * Description: مدیریت مخاطبان، سوابق ارتباط و پیگیری‌های تجاری.
- * Version: 1.3.1
+ * Version: 1.3.2
  * Requires at least: 6.8
  * Requires PHP: 8.1
  * Text Domain: trade-crm
@@ -11,7 +11,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'TRADE_CRM_VERSION', '1.3.1' );
+define( 'TRADE_CRM_VERSION', '1.3.2' );
 define( 'TRADE_CRM_DB_VERSION', '1.2.0' );
 define( 'TRADE_CRM_FILE', __FILE__ );
 define( 'TRADE_CRM_DIR', plugin_dir_path( __FILE__ ) );

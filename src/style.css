@@ -189,6 +189,7 @@ textarea { resize: vertical; }
 .status-chip, .followup-chip { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 30px; max-width: 100%; padding: 4px 10px; border: 1px solid transparent; border-radius: 30px; font-size: var(--font-xs); line-height: 1.7; white-space: nowrap; }
 .status-new { color: #315f83; background: #eaf2fa; border-color: #dce8f5; }
 .status-following_up { color: #795611; background: #fff5dc; border-color: #f5e8c4; }
+.status-potential_customer { color: #66518c; background: #f2edfa; border-color: #e6dcf5; }
 .status-customer { color: #316641; background: #eaf5e7; border-color: #dcebd7; }
 .status-closed { color: #59675c; background: #f0f3ed; border-color: #e2e8de; }
 .followup-chip { color: #795611; background: #fff7e6; border-color: #f3e8cd; }

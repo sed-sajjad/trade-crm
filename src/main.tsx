@@ -16,14 +16,14 @@ import './style.css';
 
 declare global { interface Window { tradeCrmConfig: { apiRoot: string; nonce: string; sessionUrl: string; appUrl: string; loginUrl: string; logoutUrl: string; user: { id: number; name: string }; appName: string; version: string } } }
 const cfg = window.tradeCrmConfig;
-type Status = 'new' | 'following_up' | 'customer' | 'closed';
+type Status = 'new' | 'following_up' | 'potential_customer' | 'customer' | 'closed';
 type NumberItem = { number_e164: string; is_phone: boolean; is_whatsapp: boolean };
 type Industry = { id: number; parent_id: number; parent_name: string; name: string; path: string[]; path_label: string; depth: number; is_active: boolean; is_selectable: boolean; child_count: number; contact_count: number; can_delete: boolean };
 type Supervisor = { id: number; name: string; active: boolean };
 type Contact = { id: number; name: string; first_name: string; last_name: string; company: string; email: string; website: string; telegram: string; instagram: string; country_code: string; city: string; source: string; initial_note: string; status: Status; assigned_user_id: number | null; assigned_user_name: string; created_by_name: string; created_at: string; updated_at: string; version: number; archived_at: string | null; archived: boolean; followup_at: string | null; followup_topic: string; numbers: NumberItem[]; industries: Industry[] };
 type Activity = { id: number; type: string; data: Record<string, any>; actor_name: string; created_at: string };
 type PageResult<T> = { items: T[]; has_more: boolean; next_cursor: string | null };
-const statuses: Record<Status, string> = { new: 'جدید', following_up: 'در حال پیگیری', customer: 'مشتری', closed: 'بسته‌شده' };
+const statuses: Record<Status, string> = { new: 'جدید', following_up: 'در حال پیگیری', potential_customer: 'مشتری احتمالی', customer: 'مشتری', closed: 'بسته‌شده' };
 const sources: Record<string, string> = { whatsapp: 'واتساپ', instagram: 'اینستاگرام', telegram: 'تلگرام', phone: 'تماس', referral: 'معرفی', other: 'سایر' };
 const cn = (...values: Array<string | false | undefined>) => values.filter(Boolean).join(' ');
 const normalizeIndustryText = (value: string) => value.replace(/[يى]/g, 'ی').replace(/ك/g, 'ک').replace(/[٠-٩]/g, (digit) => String('٠١٢٣٤٥٦٧٨٩'.indexOf(digit))).replace(/[۰-۹]/g, (digit) => String('۰۱۲۳۴۵۶۷۸۹'.indexOf(digit))).replace(/\u200c/g, ' ').replace(/\s+/g, ' ').trim().toLocaleLowerCase('fa');

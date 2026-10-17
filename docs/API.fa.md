@@ -73,7 +73,7 @@
 
 `website` اختیاری است و حداکثر ۲۰۴۸ نویسه دارد. فقط آدرس‌های `http` و `https` پذیرفته می‌شوند؛ آدرس بدون پیشوند مانند `example.com` با `https://` ذخیره می‌شود. مقدار خالی، آدرس قبلی را پاک می‌کند؛ حذف این فیلد از درخواست ویرایش، آدرس قبلی را حفظ می‌کند. آدرس سایت در پاسخ پرونده و جست‌وجوی مخاطبان نیز در دسترس است.
 
-`status` فقط یکی از `new`, `following_up`, `customer`, `closed` است. `followup` در فهرست می‌تواند `today`, `overdue`, `has`, یا `none` باشد. `archive` برابر `active`, `archived`, یا `all` است. تعداد هر صفحه حداکثر ۱۰۰ است.
+`status` فقط یکی از `new`, `following_up`, `potential_customer` (مشتری احتمالی), `customer`, `closed` است. `followup` در فهرست می‌تواند `today`, `overdue`, `has`, یا `none` باشد. `archive` برابر `active`, `archived`, یا `all` است. تعداد هر صفحه حداکثر ۱۰۰ است.
 
 فهرست حوزه‌ها حداکثر سه سطح دارد و پاسخ هر مورد شامل `id`, `parent_id`, `name`, `path`, `path_label`, `depth`, `is_active`, `is_selectable`, `child_count`, `contact_count`, `can_delete` است. `is_selectable` فعال‌بودن خود مورد و والدهایش را در نظر می‌گیرد. جست‌وجو نام هر سطح و مسیر کامل را با نرمال‌سازی حروف فارسی/عربی پیدا می‌کند. `parent_id=0` فقط دسته‌های اصلی را می‌دهد؛ در نبود `parent_id` جست‌وجو در همه سطح‌ها انجام می‌شود. `cursor` شناسه عددی آخرین مورد است و پاسخ `next_cursor` دارد.
 
